@@ -1,0 +1,186 @@
+body {
+  direction: rtl;
+}
+
+.pieChart-data,
+.employee-chart-data,
+.branch-chart-data {
+  padding: 0;
+  padding-left: 5px;
+}
+
+.pieChart-data {
+  padding-left: 5px;
+
+}
+
+.employee-col,
+.pieChart-col {
+  border-left: none;
+}
+
+.branch-col,
+.Branch-car-col {
+  border-left: 1px solid #f5f3ef;
+}
+
+.on-mobile p {
+  text-align: end;
+
+}
+
+.products-collapse-buttons-img {
+  transform: rotate(180deg);
+}
+
+.mode-btn {
+  padding-right: 15px;
+  cursor: pointer;
+}
+
+.faq-toggle {
+  right: 10px;
+}
+
+.tabs {
+  text-align: end;
+}
+
+#brunch_name {
+  direction: ltr;
+}
+
+.Branch {
+  text-align: end;
+}
+
+.car-data,
+.dropdownTitles,
+.titles {
+  text-align: left;
+}
+
+@media (max-width:484px) {
+  .card-body {
+    padding: 1rem !important;
+  }
+
+  .rent-data {
+    left: 5%;
+  }
+
+  .docs {
+    transform: translateX(40%);
+  }
+}
+
+
+/*marquee*/
+.marquee-xmark {
+  right: auto;
+  left: 5px
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+#userDropdown {
+  text-align: end;
+}
+
+#branchList {
+  background-position: right .75rem center;
+  padding: .375rem 2.25rem .375rem .75rem;
+  text-align: left;
+}
+#nextBtn2,
+#prevBtn2 {
+  transform: rotate(180deg);
+}
+#nextBtn3,
+#prevBtn3 {
+  transform: rotate(180deg);
+}
+#nextBtn4,
+#prevBtn4 {
+  transform: rotate(180deg);
+}
+#nextBtn5,
+#prevBtn5 {
+  transform: rotate(180deg);
+}
+.carFilter {
+  background-position: right .75rem center;
+  padding: .375rem 2.25rem .375rem .75rem;
+  text-align: left;
+}
+
+
+#carDetailsModal .modal-content {
+  direction: ltr;
+}
+.reasons{
+  direction: ltr;
+  color: #2c3e50;
+}
+.reasons-dropdown {
+    direction: ltr;
+}
+/*  */
+.contract-section {
+  direction: ltr;
+}
+.contract-label i {
+  margin-left: 0px;
+  margin-right: 5px;
+}
+/*  */
+
+@media (max-width: 991px) {
+  .buttons-container {
+    justify-content: flex-end;
+
+  }
+}
+/* Feed */
+.Feed-textarea {
+    text-align: left;
+  }
+
+/*  */
+.chart-p{
+    direction: ltr;
+    text-align: start;
+}
+#nextBtn1,
+#prevBtn1 {
+  transform: rotate(180deg);
+}
+#cardBody{
+  direction: ltr;
+}
+.Available_Car_Card{
+  direction: rtl;
+}
+.car-icons{
+  direction: rtl;
+}
+.chart-card{
+  direction: ltr;
+}
+.card-menu-icon{
+  right: auto;
+  left: 10px;
+}
+.card-info-popup{
+  right: auto;
+  left: 10px;
+}

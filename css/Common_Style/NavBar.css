@@ -1,0 +1,307 @@
+/*=======================Navbar======================*/
+nav {
+  background-color: rgba(255, 206, 148, 1);
+  padding: .5rem 1rem !important;
+  color: black;
+}
+
+.on-mobile {
+  text-align: end;
+}
+
+.img-profile {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.notify-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notify-item img {
+  width: 20px;
+  margin: 0px 5px;
+}
+
+.dripicons-bell {
+  margin-bottom: 8px;
+}
+
+/*=======================navbar lists ======================*/
+.alert {
+  color: #fff;
+  background-color: #FF992E;
+  flex-direction: row-reverse;
+  font-size: .7rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  border: 1px solid #4e73df;
+  padding: 0.5rem 0.6rem;
+}
+
+.dropdown-item-custom {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e3e6f0;
+  font-size: .7rem;
+  flex-direction: row-reverse;
+
+}
+
+.ended-Docs-Num {
+  color: red;
+}
+
+.Not-ended-Docs-Num {
+  color: #FF992E;
+}
+
+.Logo {
+  height: 60px;
+}
+
+.BranchStatus {
+  font-size: .75rem;
+  color: red;
+}
+
+.Name_status {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  gap: 3px;
+  align-items: center;
+}
+
+/*=======================topbar  warnings line ======================*/
+.warning-section {
+  background-color: rgb(253 253 253 / 56%);
+  text-align: center;
+  box-shadow: 0px 1px 3px 1px #dbd4d496;
+  backdrop-filter: blur(10px);
+  padding: 0.75rem;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  max-width: 80%;
+  margin: 0 1rem;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 5rem;
+  animation: marquee 15s linear infinite;
+  color: #C32222;
+  font-weight: 500;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+  ;
+}
+
+.marquee-content p {
+  margin-bottom: 0;
+}
+
+@keyframes marquee {
+  100% {
+    transform: translateX(100%);
+  }
+
+  0% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-xmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #C32222;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  border: white 1px solid;
+}
+/*======================= Password Modal ======================*/
+.password-input-page {
+  padding: 10px 40px 10px 30px;
+  font-size: 16px;
+  position: relative;
+  min-height: 48px !important;
+}
+
+.lock-icon {
+  position: absolute;
+  right: 15px;
+  top: 35%;
+  transform: translateY(-50%);
+  color: #555;
+  z-index: 1;
+}
+
+.toggle-password {
+  position: absolute;
+  left: 15px;
+  top: 35%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  z-index: 1;
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+#NewPassword::placeholder {
+  color: #D9D9D9;
+}
+
+.password-input{
+  border-radius: 8px;
+  border: 2px solid #faa64d;
+  resize: none;
+  font-size: .875rem;
+  min-height: 48px !important;
+}
+
+.password-input:focus{
+  box-shadow: none !important;
+  border: 2px solid #facd9c !important;
+}
+.PassWord-invaildBox {
+    margin-top: .25rem;
+    min-height: 20px;
+}
+.Password-invalid-feedback {
+    color: red;
+    display: block;
+    font-size: 12px;
+    margin-top: 0rem;
+    text-align: end;
+}
+/*=======================  Media ======================*/
+@media (max-width: 991px) {
+  .navbar {
+    flex-wrap: wrap !important;
+    height: auto;
+    gap: 1rem;
+  }
+
+  .warning-section {
+    order: 3;
+    flex-basis: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 665px) {
+
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .on-mobile {
+    flex-direction: column-reverse;
+    padding-top: 16px;
+  }
+
+  .on-mobile p {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width:484px) {
+  .card-body {
+    padding: .5rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .hide-on-mobile {
+    font-size: .8rem !important;
+  }
+
+  .extra-small-mobile {
+    font-size: .8rem !important;
+  }
+
+  .userName {
+    font-size: .8rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .on-mobile img {
+    /* display: none; */
+    width: 100px;
+    height: auto;
+  }
+
+  .hide-on-mobile {
+
+    display: none;
+  }
+
+  .on-mobile p {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    padding: 8px 12px !important;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .userName {
+    display: none !important;
+  }
+
+  .dripicons-message,
+  .dripicons-bell {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav {
+    padding: 0.5rem 0.6rem !important;
+  }
+
+
+
+  #userDropdown {
+    padding: 0;
+  }
+
+  .btn-secondary1 {
+    font-size: 12px;
+  }
+
+
+}
+@media (max-width: 320px) {
+    .extra-small-mobile, .BranchStatus {
+        display: none;
+    }
+}
