@@ -1,0 +1,771 @@
+jQuery(document).ready(function () {
+  ImgUpload();
+});
+
+function HideFirstImg() {
+  var firstImg = document.getElementById("upload-img1");
+  firstImg.style.display = "none";
+}
+
+var imgArray = [];
+
+function ImgUpload() {
+  var imgWrap = "";
+
+  $(".upload__inputfile").each(function () {
+    $(this).on("change", function (e) {
+      imgWrap = $(this).closest(".upload__box").find(".upload_img-wrap_inner");
+      var maxLength = 22;
+      var files = e.target.files;
+      var filesArr = Array.prototype.slice.call(files);
+      var uploadBtnBox = document.getElementById("checking-img");
+      var uploadBtnBox1 = document.getElementById("upload__btn-box");
+      var errorMessageDivs = document.getElementsByClassName("Examination-error-message"); 
+
+      if (imgArray.length + filesArr.length > maxLength) {
+        uploadBtnBox.disabled = true;
+        // Loop 
+        for (var j = 0; j < errorMessageDivs.length; j++) {
+          errorMessageDivs[j].textContent =
+            "الرجاء ... التحقق من جميع البنود و بحد اقصى 22 صورة";
+          errorMessageDivs[j].style.display = "block";
+        }
+        uploadBtnBox1.style.display = "none";
+      } else {
+        uploadBtnBox.disabled = false;
+        // Loop 
+        for (var j = 0; j < errorMessageDivs.length; j++) {
+          errorMessageDivs[j].style.display = "none";
+        }
+        uploadBtnBox1.style.display = "block";
+      }
+
+      var processedCount = 0;
+      var totalToProcess = Math.min(filesArr.length, maxLength - imgArray.length);
+
+      for (var i = 0; i < totalToProcess; i++) {
+        (function (f) {
+          // console.log("Selected file type:", f.type);
+
+          if (
+            f.type === "image/heic" ||
+            f.type === "image/heif" ||
+            f.name.endsWith(".heic") ||
+            f.name.endsWith(".heif")
+          ) {
+            console.log("Processing HEIC/HEIF file:", f.name);
+
+            heic2any({
+              blob: f,
+              toType: "image/jpeg",
+            })
+              .then(function (convertedBlob) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                  var html =
+                    "<div class='upload__img-box'><div style='background-image: url(" +
+                    e.target.result +
+                    ")' data-number='" +
+                    $(".upload__img-close").length +
+                    "' data-file='" +
+                    f.name +
+                    "' class='img-bg'><div class='upload__img-close'><img src='img/delete.png'></div></div></div>";
+
+                  imgWrap.append(html);
+                  imgArray.push({
+                    f: f,
+                    url: e.target.result,
+                  });
+                  console.log(imgArray);
+                  
+                  processedCount++;
+                  if (processedCount === totalToProcess) {
+                    setTimeout(setImageRowHeight, 100);
+                  }
+                };
+                reader.readAsDataURL(convertedBlob);
+              })
+              .catch(function (err) {
+                console.error("Error converting HEIC/HEIF image:", err);
+                processedCount++;
+                if (processedCount === totalToProcess) {
+                  setTimeout(setImageRowHeight, 100);
+                }
+              });
+          } else {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+              var html =
+                "<div class='upload__img-box'><div style='background-image: url(" +
+                e.target.result +
+                ")' data-number='" +
+                $(".upload__img-close").length +
+                "' data-file='" +
+                f.name +
+                "' class='img-bg'><div class='upload__img-close'><img src='img/delete.png'></div></div></div>";
+              imgWrap.append(html);
+              imgArray.push({
+                f: f,
+                url: e.target.result,
+              });
+              // console.log(imgArray);
+              
+              processedCount++;
+              if (processedCount === totalToProcess) {
+                setTimeout(setImageRowHeight, 100);
+              }
+            };
+            reader.readAsDataURL(f);
+          }
+        })(filesArr[i]);
+      }
+    });
+  });
+
+  $("body").on("click", ".upload__img-close", function (e) {
+    e.stopPropagation();
+    var file = $(this).parent().data("file");
+
+    for (var i = 0; i < imgArray.length; i++) {
+      if (imgArray[i].f.name === file) {
+        imgArray.splice(i, 1);
+        break;
+      }
+    }
+
+    $(this).parent().parent().remove();
+    console.log(imgArray);
+
+    var maxLength = 22;
+    var uploadBtnBox = document.getElementById("checking-img");
+    var errorMessageDivs = document.getElementsByClassName("Examination-error-message");
+    var uploadBtnBox1 = document.getElementById("upload__btn-box");
+
+    if (imgArray.length >= maxLength) {
+      uploadBtnBox.disabled = true;
+      // Loop
+      for (var j = 0; j < errorMessageDivs.length; j++) {
+        errorMessageDivs[j].textContent =
+          "الرجاء ... التحقق من جميع البنود و بحد اقصى 22 صورة";
+        errorMessageDivs[j].style.display = "block";
+      }
+      uploadBtnBox1.style.display = "none";
+    } else {
+      uploadBtnBox.disabled = false;
+      // Loop
+      for (var j = 0; j < errorMessageDivs.length; j++) {
+        errorMessageDivs[j].style.display = "none";
+      }
+      uploadBtnBox1.style.display = "block";
+    }
+    
+    setTimeout(setImageRowHeight, 50);
+  });
+}
+
+function setImageRowHeight() {
+
+     if (window.innerWidth <= 991) {
+        const imagesRow = document.querySelector('.virtual-check-images-row');
+        if (imagesRow) {
+            imagesRow.style.height = '';
+        }
+        return;
+    }
+    const virtualCheckData = document.querySelector('.virtual-check-data');
+    const imagesRow = document.querySelector('.virtual-check-images-row');
+    
+    if (!virtualCheckData || !imagesRow) return;
+    
+    let attempts = 0;
+    const maxAttempts = 5;
+    
+    function measureHeight() {
+        const parentHeight = virtualCheckData.offsetHeight;
+        const currentReadingRows = document.querySelectorAll('.CurrentReadingg_row');
+        const errorMessage = document.querySelector('.virtual-check-data > .row.mt-auto');
+        
+        let otherElementsHeight = 0;
+        
+        currentReadingRows.forEach(row => {
+            otherElementsHeight += row.offsetHeight;
+        });
+        
+         if (errorMessage) {
+            otherElementsHeight += errorMessage.offsetHeight;
+        }
+        const buffer = 30;
+        const availableHeight = parentHeight - otherElementsHeight - buffer - 50;
+        if (availableHeight > 50 || attempts >= maxAttempts) {
+            imagesRow.style.height = `${Math.max(availableHeight, 250)}px`;
+            return true;
+        }
+        return false;
+    }
+    
+    function tryMeasure() {
+        attempts++;
+        const success = measureHeight();
+        
+        if (!success && attempts < maxAttempts) {
+            setTimeout(tryMeasure, 100);
+        }
+    }
+    
+    tryMeasure();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(setImageRowHeight, 100);
+    setTimeout(setImageRowHeight, 500);
+    setTimeout(setImageRowHeight, 1000);
+});
+
+window.addEventListener('resize', function() {
+    setTimeout(setImageRowHeight, 50);
+    setTimeout(setImageRowHeight, 100);
+    setTimeout(setImageRowHeight, 200);
+});
+
+$("body").on("click", ".img-bg", function (e) {
+  var imageUrl = $(this).css("background-image");
+  imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, "$1");
+ openImageInNewTab(imageUrl)
+});
+
+// // // //////////////////////////////////////////////// رفع صورة التوقيع ////////////////////////////////////////////////////////////////////////
+let saveSignatureBtn = null;
+document
+  .getElementById("UploadSigntaurePic")
+  .addEventListener("click", function () {
+    saveSignatureBtn = "UploadSigntaurePic";
+  });
+
+document
+  .getElementById("WriteSignature")
+  .addEventListener("click", function () {
+    saveSignatureBtn = "WriteSignature";
+  });
+const uploadContainer = document.querySelector(".upload-container");
+const mainContainer = document.querySelector(".Signature-main-container");
+const UploadSigntaurePic = document.getElementById("UploadSigntaurePic");
+const imageUpload = document.getElementById("imageUpload");
+var imgeURL;
+const uploadedImg = null;
+//
+UploadSigntaurePic.addEventListener("click", function () {
+  imageUpload.click();
+});
+imageUpload.addEventListener("change", function () {
+  const file = imageUpload.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const imageURL = e.target.result;
+       mainContainer.innerHTML =
+        '<i class="fa-regular fa-circle-xmark"  style="cursor: pointer;"></i>';
+       Previewing_Signature(imageURL)
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+removeSignatureImg.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (uploadContainer.firstChild) {
+    uploadContainer.innerHTML = "";
+    mainContainer.innerHTML = "";
+    uploadContainer.classList.remove("previewing");
+    uploadContainer.innerHTML =
+      ' <img class="upload-icon" src="img/Rectangle 144.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
+  }
+});
+// //////////////////////////////////////////////// كتابة التوقيع ////////////////////////////////////////////////////////////////////////
+const WriteSignature = document.getElementById("WriteSignature");
+WriteSignature.addEventListener("click", function () {
+  document.body.classList.add("no-scroll");
+  uploadContainer.innerHTML = "";
+  mainContainer.innerHTML = "";
+  uploadContainer.innerHTML =
+    '<canvas id="canvas" width="200" height="200" class="mb-2 bg-white"></canvas>';
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  ctx.lineWidth = 4;
+
+  var drawing = false;
+  var prevX = 0;
+  var prevY = 0;
+  var currX = 0;
+  var currY = 0;
+  
+  function drawLine(x0, y0, x1, y1) {
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.lineTo(x1, y1);
+    ctx.stroke();
+    ctx.closePath();
+  }
+
+  canvas.addEventListener("mousedown", handleMouseDown, false);
+  canvas.addEventListener("mousemove", handleMouseMove, false);
+  canvas.addEventListener("mouseup", handleMouseUp, false);
+
+  canvas.addEventListener("touchstart", handleTouchStart, false);
+  canvas.addEventListener("touchmove", handleTouchMove, false);
+  canvas.addEventListener("touchend", handleTouchEnd, false);
+
+  function handleMouseDown(e) {
+    drawing = true;
+    prevX = e.clientX - canvas.getBoundingClientRect().left;
+    prevY = e.clientY - canvas.getBoundingClientRect().top;
+  }
+
+  function handleMouseMove(e) {
+    if (!drawing) return;
+    currX = e.clientX - canvas.getBoundingClientRect().left;
+    currY = e.clientY - canvas.getBoundingClientRect().top;
+
+    drawLine(prevX, prevY, currX, currY);
+    prevX = currX;
+    prevY = currY;
+  }
+
+  function handleMouseUp() {
+    drawing = false;
+  }
+
+  function handleTouchStart(e) {
+    drawing = true;
+    prevX = e.touches[0].clientX - canvas.getBoundingClientRect().left;
+    prevY = e.touches[0].clientY - canvas.getBoundingClientRect().top;
+  }
+
+  function handleTouchMove(e) {
+    if (!drawing) return;
+    currX = e.touches[0].clientX - canvas.getBoundingClientRect().left;
+    currY = e.touches[0].clientY - canvas.getBoundingClientRect().top;
+
+    drawLine(prevX, prevY, currX, currY);
+    prevX = currX;
+    prevY = currY;
+  }
+
+  function handleTouchEnd() {
+    drawing = false;
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dataURL = null; // Clear the stored signature
+  }
+
+  document.getElementById("clear").addEventListener("click", function () {
+    clearCanvas();
+  });
+});
+
+function SaveWrittenSignature() {
+  document.body.classList.remove("no-scroll");
+  var canvas = document.getElementById("canvas");
+  var dataURL = canvas.toDataURL();
+  Previewing_Signature(dataURL)
+  $("#signature-modal").modal("hide");
+}
+
+// Save the uploded signature image
+function SaveUplodedSignature() {
+  const img = document.getElementById("signatureImage");
+  const canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  const context = canvas.getContext("2d");
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const base64 = canvas.toDataURL("image/jpeg");
+  console.log(base64);
+  $("#signature-modal").modal("hide");
+}
+// // // //////////////////////////////////////////////// عرض صورة التوقيع ////////////////////////////////////////////////////////////////////////
+function Previewing_Signature(imageURL){
+   const previewImage = document.createElement("img");
+      previewImage.classList.add("preview-image");
+      previewImage.classList.add("bg-white");
+      previewImage.src = imageURL;
+      previewImage.id = "signatureImage";
+      imgeURL = imageURL;
+      uploadContainer.innerHTML = "";
+      uploadContainer.appendChild(previewImage);
+      uploadContainer.classList.add("previewing");
+      previewImage.addEventListener("click", function () {
+        var newTab = window.open();
+        $(newTab.document.head).html(`
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>View Image</title>
+          <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html, body {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+            }
+            body {
+              background-color: black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .image-container {
+              width: 70vw;
+              height: 70vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              width: auto;
+              height: auto;
+              object-fit: contain;
+              background-color:white;
+            }
+          </style>
+          `);
+        newTab.document.body.innerHTML = `
+          <div class="image-container">
+            <img src="${imgeURL}" alt="View Image">
+          </div>
+        `;
+      });
+}
+
+document.getElementById("save").addEventListener("click", function () {
+  if (saveSignatureBtn === "UploadSigntaurePic") {
+    SaveUplodedSignature();
+  } else if (saveSignatureBtn === "WriteSignature") {
+    SaveWrittenSignature();
+  } else {
+    console.log("No button has been clicked yet");
+  }
+});
+// // //////////////////////////////////////////////// رفع صورة الهوية ////////////////////////////////////////////////////////////////////////
+let saveIDBtn = null;
+let hasValidImage = false; 
+
+document.getElementById("UploadIDPic").addEventListener("click", function () {
+  saveIDBtn = "UploadIDPic";
+  console.log(saveIDBtn);
+});
+
+const IDuploadContainer = document.querySelector(".ID-upload-container");
+const IDmainContainer = document.querySelector(".ID-main-container");
+const UploadIDPic = document.getElementById("UploadIDPic");
+const IDimageUpload = document.getElementById("IDimageUpload");
+var imgeURL;
+const IDuploadedImg = null;
+//
+
+UploadIDPic.addEventListener("click", function () {
+  IDimageUpload.click();
+  removeIDImg.style.display = "Block";
+});
+
+IDimageUpload.addEventListener("change", function () {
+  const file = IDimageUpload.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const IDimageURL = e.target.result;
+      const IDpreviewImage = document.createElement("img");
+      IDpreviewImage.classList.add("preview-image");
+      IDpreviewImage.src = IDimageURL;
+      IDpreviewImage.id = "IDImage";
+
+      IDpreviewImage.style.cursor = "pointer";
+      IDpreviewImage.title = "Click to open image in new tab";
+      IDpreviewImage.addEventListener("click", function () {
+        openImageInNewTab(IDimageURL);
+      });
+
+      imgeURL = IDimageURL;
+      IDmainContainer.innerHTML =
+        '<i class="fa-regular fa-circle-xmark"  style="cursor: pointer;"></i>';
+      IDuploadContainer.innerHTML = "";
+      IDuploadContainer.appendChild(IDpreviewImage);
+      IDuploadContainer.classList.add("previewing");
+
+      hasValidImage = true; 
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+removeIDImg.addEventListener("click", function (event) {
+  event.preventDefault();
+  if (IDuploadContainer.firstChild) {
+    IDuploadContainer.innerHTML = "";
+    IDmainContainer.innerHTML = "";
+    IDuploadContainer.classList.remove("previewing");
+    IDuploadContainer.innerHTML =
+      ' <img class="upload-icon" src="img/Rectangle 144.png" alt="Upload Icon"><p>ارفق صورة الهوية </p>';
+
+    hasValidImage = false; 
+    resetButtonImage();
+  }
+});
+
+// Global variable to track which button was clicked
+let currentUploadButton = null;
+
+// // ////////////////////////////////////////////////  التقاط صورة الهوية او الرخصة////////////////////////////////////////////////////////////////////////
+const openCameraButton = document.getElementById("openCamera");
+document.getElementById("openCamera").addEventListener("click", function () {
+  saveIDBtn = "CameraID";
+  console.log(saveIDBtn);
+});
+
+openCameraButton.addEventListener("click", async () => {
+  let videoElement = document.getElementById("videoElement");
+  let photo = document.getElementById("photo");
+  removeIDImg.style.display = "none";
+  if (!videoElement) {
+    IDuploadContainer.innerHTML = `
+            <video id="videoElement" autoplay></video>
+            <img id="photo" alt="The screen capture will appear in this box." style="display:none;">
+        `;
+    videoElement = document.getElementById("videoElement");
+    photo = document.getElementById("photo");
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: { exact: "environment" },
+        },
+      });
+      videoElement.srcObject = stream;
+    } catch (error) {
+      console.log("Back camera not available, using default camera");
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: {
+            facingMode: "environment",
+          },
+        });
+        videoElement.srcObject = stream;
+      } catch (fallbackError) {
+        console.error("Error accessing any camera:", fallbackError);
+      }
+    }
+  } else {
+    const canvasElement = document.createElement("canvas");
+    canvasElement.width = videoElement.videoWidth;
+    canvasElement.height = videoElement.videoHeight;
+    const context = canvasElement.getContext("2d");
+    context.drawImage(
+      videoElement,
+      0,
+      0,
+      canvasElement.width,
+      canvasElement.height
+    );
+
+    const stream = videoElement.srcObject;
+    const tracks = stream.getTracks();
+    tracks.forEach((track) => track.stop());
+
+    const dataUrl = canvasElement.toDataURL("image/png");
+    photo.src = dataUrl;
+    photo.style.display = "block";
+
+    // عند الضغط يتم فتح الصورة في تاب مستقلة
+    photo.style.cursor = "pointer";
+    photo.title = "Click to open image in new tab";
+    photo.addEventListener("click", function () {
+      openImageInNewTab(dataUrl);
+    });
+
+    hasValidImage = true;
+    videoElement.remove();
+  }
+});
+
+//الفانكشن المسؤلة عن فتح الصورة للهوية و رخصة القيادة و صور الفحص الظاهري
+function openImageInNewTab(imageDataUrl) {
+ var newTab = window.open();
+
+  $(newTab.document.head).html(`
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Image</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      body {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .image-container {
+        width: 70vw;
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+      }
+    </style>
+  `);
+
+  newTab.document.body.innerHTML = `
+    <div class="image-container">
+      <img src="${imageDataUrl}" alt="View Image">
+    </div>
+  `;
+}
+
+// Save the uploaded IDphoto image
+function SaveUplodedIDphoto() {
+  const img = document.getElementById("IDImage");
+  if (!img) {
+    console.log("No image found for uploaded ID photo");
+    $("#IDphoto-modal").modal("hide");
+    return false;
+  }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  // Check if canvas width is 0
+  if (canvas.width === 0) {
+    $("#IDphoto-modal").modal("hide");
+    return false;
+  }
+
+  const context = canvas.getContext("2d");
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const base64 = canvas.toDataURL("image/jpeg");
+  console.log(base64);
+  $("#IDphoto-modal").modal("hide");
+  return true;
+}
+
+// Save the camera IDphoto image
+function SaveCameraIDphoto() {
+  const img = document.getElementById("photo");
+  if (!img) {
+    console.log("No image found for camera ID photo");
+    $("#IDphoto-modal").modal("hide");
+    return false;
+  }
+
+  const canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  // Check if canvas width is 0
+  if (canvas.width === 0) {
+    $("#IDphoto-modal").modal("hide");
+    return false;
+  }
+
+  const context = canvas.getContext("2d");
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  const base64 = canvas.toDataURL("image/jpeg");
+  console.log(base64);
+  $("#IDphoto-modal").modal("hide");
+  return true;
+}
+
+// تحديث زر فتح مودال الهوية في حالة تم رفع صورة
+function updateButtonImage() {
+  if (currentUploadButton) {
+    const img = currentUploadButton.querySelector("img");
+    const activeIcon = currentUploadButton.getAttribute("data-active-icon");
+
+    if (img && activeIcon) {
+      img.src = activeIcon;
+    }
+  }
+  currentUploadButton = null;
+}
+
+function resetButtonImage() {
+  if (currentUploadButton) {
+    const img = currentUploadButton.querySelector("img");
+    const initialIcon = currentUploadButton.getAttribute("data-initial-icon");
+
+    if (img && initialIcon) {
+      img.src = initialIcon;
+    } else if (img) {
+      img.style.filter = "none";
+      img.style.opacity = "1";
+    }
+  }
+  currentUploadButton = null;
+}
+
+document.querySelectorAll(".Upload-Photo-Button").forEach((button) => {
+  button.addEventListener("click", function () {
+    currentUploadButton = this;
+
+    this.style.opacity = "0.8";
+    setTimeout(() => {
+      this.style.opacity = "1";
+    }, 200);
+  });
+});
+
+document.getElementById("ID-photo-save").addEventListener("click", function () {
+  let saveSuccessful = false;
+
+  if (saveIDBtn === "UploadIDPic") {
+    saveSuccessful = SaveUplodedIDphoto();
+  } else if (saveIDBtn === "CameraID") {
+    saveSuccessful = SaveCameraIDphoto();
+  }
+
+  if (saveSuccessful && hasValidImage) {
+    updateButtonImage();
+  } else {
+    resetButtonImage();
+  }
+});
+
+document
+  .getElementById("IDphoto-modal")
+  .addEventListener("hidden.bs.modal", function () {
+    if (!hasValidImage) {
+      resetButtonImage();
+    }
+    currentUploadButton = null;
+  });
+
+document
+  .getElementById("IDphoto-modal")
+  .addEventListener("show.bs.modal", function () {
+    const hasImage =
+      IDuploadContainer.querySelector("img.preview-image") ||
+      IDuploadContainer.querySelector("img#photo") ||
+      IDuploadContainer.querySelector("img#IDImage");
+    hasValidImage = !!hasImage;
+  });
+
