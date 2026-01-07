@@ -79,7 +79,7 @@ body.no-scroll {
 
 .requird-field-row-last {
     justify-content: flex-end;
-    height: 25px;
+    min-height: 25px;
 }
 
 .content-row {
@@ -539,7 +539,7 @@ input[type="number"]:nth-child(n+4) {
 
 .requird-field-row {
     justify-content: flex-end;
-    height: 25px;
+    min-height: 25px;
 }
 
 
