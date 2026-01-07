@@ -10,7 +10,7 @@ var balanceOptions = {
   colors: ["rgba(54,162,235,1)", "rgba(255,99,132,1)"],
   chart: {
     type: "bar",
-    height: 350,
+    height: 400,
     fontFamily: "'Cairo','Arial',sans-serif",
     toolbar: { show: false }
   },
@@ -81,8 +81,9 @@ var contractsOptions = {
     "rgba(242,36,36,1)"
   ],
   chart: {
-    type: "donut",
-    fontFamily: "'Cairo','Arial',sans-serif"
+    type: "pie",
+    fontFamily: "'Cairo','Arial',sans-serif",
+    height:"290"
   },
   legend: {
     position: "bottom",
@@ -103,11 +104,12 @@ var carsOptions = {
     rtlLabel("المتاحة"),
     rtlLabel("المؤجرة"),
     rtlLabel("غير المتاحة"),
-    rtlLabel("المحفوظة")
+    rtlLabel("المحفوظة"),
   ],
   chart: {
     type: "radialBar",
-    fontFamily: "'Cairo','Arial',sans-serif"
+    fontFamily: "'Cairo','Arial',sans-serif",
+    height:"350"
   },
   plotOptions: {
     radialBar: {
@@ -118,10 +120,11 @@ var carsOptions = {
         background: "transparent",
         image: undefined,
       },
+      
       barLabels: {
         enabled: true,
         fontSize: "12px",
-        fontWeight:"500",
+        fontWeight: "500",
         offsetX: -8,
         formatter: function (seriesName, opts) {
           return (
@@ -129,31 +132,27 @@ var carsOptions = {
             " : " +
             opts.w.globals.series[opts.seriesIndex]
           );
-        }
+        },
       },
       dataLabels: {
-  name: {
-    show: false
-  },
-  value: {
-    show: false
-  },
-  total: {
-    show: false
-  }
-}
-
-    }
+        name: {
+          show: false,
+        },
+        value: {
+          show: false,
+        },
+        total: {
+          show: false,
+        },
+      },
+    },
   },
   colors: [
     "rgba(255,150,38,1)",
     "rgba(151,71,255,1)",
     "rgba(255,38,38,1)",
-    "rgba(54,162,235,1)"
-  ]
+    "rgba(54,162,235,1)",
+  ],
 };
 
-new ApexCharts(
-  document.querySelector("#CarsChart"),
-  carsOptions
-).render();
+new ApexCharts(document.querySelector("#CarsChart"), carsOptions).render();
