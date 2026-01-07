@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> تفاصيل تمديد العقد</title>
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="../../images/common/Demo/DefualtCompany Logo.png">
     <link href="../../css/Common_Style/sb-admin-2.min.css" rel="stylesheet">
     <link href="../../css/Common_Style/NavBar.css" rel="stylesheet">
     <link href="../../css/Pages_Style/loader.css" rel="stylesheet">
@@ -657,6 +657,17 @@
         <script src="../../js/Pages_JS/Extension/extension2.js"></script>
         <script src="../../js/Pages_JS/Extension/validation.js"></script>
         <script src="../../js/Pages_JS/Extension/Loader.js"></script>
+        <script>
+        function closeWarning() {
+            const warningSection = document.getElementById('warningSection');
+            warningSection.style.transform = 'translateY(-100%)';
+            warningSection.style.opacity = '0';
+            setTimeout(() => {
+                warningSection.style.display = 'none';
+            }, 300);
+        }
+
+    </script>
         <script>
             const buttons = document.querySelectorAll('.signature-button');
             buttons.forEach(button => {

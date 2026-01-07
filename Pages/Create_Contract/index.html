@@ -3402,6 +3402,17 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../js/Create_Contract_js/contract2.js"></script>
     <script src="../../js/Create_Contract_js/contract.js"></script>
+    <script>
+        function closeWarning() {
+            const warningSection = document.getElementById('warningSection');
+            warningSection.style.transform = 'translateY(-100%)';
+            warningSection.style.opacity = '0';
+            setTimeout(() => {
+                warningSection.style.display = 'none';
+            }, 300);
+        }
+
+    </script>
     <!-- script for Technical Check Up modal -->
     <script src="../../js/Create_Contract_js/TechnicalCheckUp.js"></script>
     <script>

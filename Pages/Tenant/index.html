@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> المستأجرين</title>
-    <link rel="icon" href="img/logo.png">
+    <link rel="icon" href="../../images/common/Demo/DefualtCompany Logo.png">
     <!-- ========================= CSS here ========================= -->
-    <link rel="icon" href="../../images/common/Static/logo.png">
+    <link rel="icon" href="../../images/common/Demo/DefualtCompany Logo.png">
     <link href="../../css/Common_Style/sb-admin-2.min.css" rel="stylesheet">
     <link href="../../css/Common_Style/NavBar.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -198,7 +198,7 @@
                         <div class="col-md-12">
                             <div class="row py-2 align-items-center">
                                 <div class="col-auto d-flex">
-                                    <a href="../../../index.html" style="width: fit-content;">
+                                    <a href="../../index.html" style="width: fit-content;">
                                         <div> <img src="../../images/common/Static/Close.svg" alt="close_icon"
                                                 class="close-icon">
                                         </div>
@@ -704,6 +704,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+      <script>
+        function closeWarning() {
+            const warningSection = document.getElementById('warningSection');
+            warningSection.style.transform = 'translateY(-100%)';
+            warningSection.style.opacity = '0';
+            setTimeout(() => {
+                warningSection.style.display = 'none';
+            }, 300);
+        }
+
+    </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.body.addEventListener("keydown", function (event) {

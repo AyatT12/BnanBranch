@@ -477,6 +477,17 @@
     <script src="Scripts/signature.js"></script>
     <!-- local scripts  Profile photo change-->
     <script>
+        function closeWarning() {
+            const warningSection = document.getElementById('warningSection');
+            warningSection.style.transform = 'translateY(-100%)';
+            warningSection.style.opacity = '0';
+            setTimeout(() => {
+                warningSection.style.display = 'none';
+            }, 300);
+        }
+
+    </script>
+    <script>
         const changeProfileBtn = document.getElementById('change-profile-btn');
         const ProfilePhotoInput = document.getElementById('Profile-photo-input');
         const profilePhotoDiv = document.querySelector('.profile-photo');
