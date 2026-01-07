@@ -218,7 +218,6 @@ nav {
 
   .on-mobile {
     flex-direction: column-reverse;
-    padding-top: 16px;
   }
 
   .on-mobile p {

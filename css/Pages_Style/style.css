@@ -130,7 +130,7 @@ nav {
 }
 
 .modal-header .btn-close {
-    background: url(../img/cancel-2.svg) !important;
+    background: url(../../images/common/Static/cancel-2.svg) !important;
     background-size: contain !important;
     background-repeat: no-repeat !important;
     opacity: 1;
@@ -1379,7 +1379,6 @@ box-shadow: none !important;
 
     .on-mobile {
         flex-direction: column-reverse;
-        padding-top: 16px;
     }
 
     .on-mobile p {
