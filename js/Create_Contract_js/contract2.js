@@ -102,7 +102,7 @@ function ImgUpload() {
                 $(".upload__img-close").length +
                 "' data-file='" +
                 f.name +
-                "' class='img-bg'><div class='upload__img-close'><img src='img/delete.png'></div></div></div>";
+                "' class='img-bg'><div class='upload__img-close'><img src='../../images/common/Static/delete.png'></div></div></div>";
               imgWrap.append(html);
               imgArray.push({
                 f: f,
@@ -277,7 +277,7 @@ removeSignatureImg.addEventListener("click", function (event) {
     mainContainer.innerHTML = "";
     uploadContainer.classList.remove("previewing");
     uploadContainer.innerHTML =
-      ' <img class="upload-icon" src="img/Rectangle 144.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
+      ' <img class="upload-icon" src="../../images/common/Static/signature/add_image.png" alt="Upload Icon"><p>ارفق صورة التوقيع</p>';
   }
 });
 // //////////////////////////////////////////////// كتابة التوقيع ////////////////////////////////////////////////////////////////////////
@@ -397,11 +397,11 @@ function Previewing_Signature(imageURL){
       uploadContainer.classList.add("previewing");
       previewImage.addEventListener("click", function () {
         var newTab = window.open();
-        $(newTab.document.head).html(`
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>View Image</title>
-          <style>
+          $(newTab.document.head).html(`
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+        <title>View Image</title>
+        <style>
             * {
               margin: 0;
               padding: 0;
@@ -411,6 +411,7 @@ function Previewing_Signature(imageURL){
               width: 100%;
               height: 100%;
               overflow: hidden;
+              position: fixed;
             }
             body {
               background-color: black;
@@ -424,6 +425,7 @@ function Previewing_Signature(imageURL){
               display: flex;
               align-items: center;
               justify-content: center;
+              padding: 10px;
             }
             img {
               max-width: 100%;
@@ -431,15 +433,37 @@ function Previewing_Signature(imageURL){
               width: auto;
               height: auto;
               object-fit: contain;
-              background-color:white;
+              background-color: white;
             }
-          </style>
-          `);
-        newTab.document.body.innerHTML = `
-          <div class="image-container">
+        </style>
+    `);
+
+    newTab.document.body.innerHTML = `
+        <div class="image-container">
             <img src="${imgeURL}" alt="View Image">
-          </div>
-        `;
+        </div>
+    `;
+
+    var script = newTab.document.createElement("script");
+    script.textContent = `
+        function forceReflow() {
+            document.body.style.display = 'none';
+            document.body.offsetHeight; // Force reflow
+            document.body.style.display = 'flex';
+            
+            window.dispatchEvent(new Event('resize'));
+            window.dispatchEvent(new Event('orientationchange'));
+        }
+        
+        setTimeout(forceReflow, 10);
+        setTimeout(forceReflow, 100);
+        setTimeout(forceReflow, 300);
+        
+        window.addEventListener('orientationchange', () => {
+            setTimeout(forceReflow, 100);
+        });
+    `;
+    newTab.document.body.appendChild(script);
       });
 }
 
@@ -486,7 +510,7 @@ IDimageUpload.addEventListener("change", function () {
       IDpreviewImage.id = "IDImage";
 
       IDpreviewImage.style.cursor = "pointer";
-      IDpreviewImage.title = "Click to open image in new tab";
+      IDpreviewImage.title = "Inappropriate file type";
       IDpreviewImage.addEventListener("click", function () {
         openImageInNewTab(IDimageURL);
       });
@@ -511,7 +535,7 @@ removeIDImg.addEventListener("click", function (event) {
     IDmainContainer.innerHTML = "";
     IDuploadContainer.classList.remove("previewing");
     IDuploadContainer.innerHTML =
-      ' <img class="upload-icon" src="img/Rectangle 144.png" alt="Upload Icon"><p>ارفق صورة الهوية </p>';
+      ' <img class="upload-icon" src="../../images/common/static/UploadPicture/add_image.png" alt="Upload Icon"><p>ارفق صورة الهوية </p>';
 
     hasValidImage = false; 
     resetButtonImage();
@@ -582,7 +606,7 @@ openCameraButton.addEventListener("click", async () => {
 
     // عند الضغط يتم فتح الصورة في تاب مستقلة
     photo.style.cursor = "pointer";
-    photo.title = "Click to open image in new tab";
+    photo.title = "Inappropriate file type";
     photo.addEventListener("click", function () {
       openImageInNewTab(dataUrl);
     });
@@ -596,49 +620,73 @@ openCameraButton.addEventListener("click", async () => {
 function openImageInNewTab(imageDataUrl) {
  var newTab = window.open();
 
-  $(newTab.document.head).html(`
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Image</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html, body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-      body {
-        background-color: black;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .image-container {
-        width: 70vw;
-        height: 70vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-      }
-    </style>
-  `);
+     $(newTab.document.head).html(`
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+        <title>View Image</title>
+        <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            html, body {
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              position: fixed;
+            }
+            body {
+              background-color: black;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .image-container {
+              width: 70vw;
+              height: 70vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 10px;
+            }
+            img {
+              max-width: 100%;
+              max-height: 100%;
+              width: auto;
+              height: auto;
+              object-fit: contain;
+              background-color: white;
+            }
+        </style>
+    `);
 
-  newTab.document.body.innerHTML = `
-    <div class="image-container">
-      <img src="${imageDataUrl}" alt="View Image">
-    </div>
-  `;
+    newTab.document.body.innerHTML = `
+        <div class="image-container">
+            <img src="${imageDataUrl}" alt="View Image">
+        </div>
+    `;
+
+    var script = newTab.document.createElement("script");
+    script.textContent = `
+        function forceReflow() {
+            document.body.style.display = 'none';
+            document.body.offsetHeight; // Force reflow
+            document.body.style.display = 'flex';
+            
+            window.dispatchEvent(new Event('resize'));
+            window.dispatchEvent(new Event('orientationchange'));
+        }
+        
+        setTimeout(forceReflow, 10);
+        setTimeout(forceReflow, 100);
+        setTimeout(forceReflow, 300);
+        
+        window.addEventListener('orientationchange', () => {
+            setTimeout(forceReflow, 100);
+        });
+    `;
+    newTab.document.body.appendChild(script);
 }
 
 // Save the uploaded IDphoto image
