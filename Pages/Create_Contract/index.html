@@ -10,7 +10,6 @@
     <link rel="icon" href="../../../../images/common/Demo/DefualtCompany Logo.png">
     <!-- ========================= CSS here ========================= -->
     <link href="../../css/Common_Style/sb-admin-2.min.css" rel="stylesheet">
-    <link href="../../css/Common_Style/NavBar.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -22,6 +21,7 @@
     <!-- bootstrab icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
         rel="stylesheet">
+    <link href="../../css/Common_Style/NavBar.css" rel="stylesheet">
     <!-- <link href="../../css/CreateContract__Style/english-style.css" rel="styleSheet"> -->
     <style>
         .canvas-wrapper {
@@ -66,21 +66,21 @@
                             style="font-size: 14px; width: 200px;" aria-labelledby="userDropdown">
                             <!-- item-->
                             <a class="dropdown-item notify-item" href="../Account/index.html" >
-                                <img src="../../images/common/Static/AccountNavIcon.svg"  />
+                                <img src="../../images/common/Static/NavBar/AccountNavIcon.svg"  />
                                 <span>حسابى</span>
                             </a>
                             <a class="dropdown-item notify-item" data-bs-toggle="modal" data-bs-target="#PassWordModal">
-                                <img src="../../images/common/Static/PasswordNavIcon.svg" />
+                                <img src="../../images/common/Static/NavBar/PasswordNavIcon.svg" />
                                 <span>تغيير كلمة السر</span>
                             </a>
                             <a class="dropdown-item notify-item" href="https://ayatt12.github.io/login_v2/Systems.html">
-                                <img src="../../images/common/Static/SystemsNavIcon.svg" />
+                                <img src="../../images/common/Static/NavBar/SystemsNavIcon.svg" />
                                 <span>الانظمة</span>
                             </a>
                             <hr class="dropdown-divider">
                             <!-- item-->
                             <a class="dropdown-item notify-item" href="https://ayatt12.github.io/login_v2/index.html">
-                                <img src="../../images/common/Static/LogoutNavIcon.svg" />
+                                <img src="../../images/common/Static/NavBar/LogoutNavIcon.svg" />
                                 <span>تسجيل الخروج</span>
                             </a>
                         </div>
@@ -95,69 +95,35 @@
                             <span class="noti-icon-badge"></span>
                         </a>
                         <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-left shadow animated--grow-in"
-                            aria-labelledby="alertsDropdown">
+                        <div class="dropdown-list dropdown-menu dropdown-menu-left shadow animated--grow-in" aria-labelledby="alertsDropdown">
                             <div class="row alert">
-                                <div class="col-6" style="text-align:end;">
-                                    الاشعارات
-                                </div>
-
-                                <div class="col-3">
-                                    علي وشك
-                                </div>
+                                <div class="col-6" style="text-align:end;">الاشعارات </div>
+                                <div class="col-3">  علي وشك </div>
                                 <div class="col-3">
                                     <span class="d-block">
                                         منتهي
                                     </span>
-                                    <span>
-                                        (لم يسجل)
-                                    </span>
                                 </div>
                             </div>
                             <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    مستندات الفرع
-                                </div>
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    1
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    0
-                                </div>
+                                <div class="col-6 p-0" style="text-align:end;">  مستندات الفرع </div>
+                                <div class="col-3 Not-ended-Docs-Num text-center">  1 </div>
+                                <div class="col-3 ended-Docs-Num"> 0 </div>
                             </a>
                             <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    وثائق السيارة
-                                </div>
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    0
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    4
-                                </div>
+                                <div class="col-6 p-0" style="text-align:end;">  وثائق السيارة </div>
+                                <div class="col-3 Not-ended-Docs-Num text-center"> 0 </div>
+                                <div class="col-3 ended-Docs-Num">  4 </div>
                             </a>
                             <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    صيانة السيارة
-                                </div>
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    0
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    5
-                                </div>
+                                <div class="col-6 p-0" style="text-align:end;">   صيانة السيارة</div>
+                                <div class="col-3 Not-ended-Docs-Num text-center">  0 </div>
+                                <div class="col-3 ended-Docs-Num">  5 </div>
                             </a>
                             <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    اسعار السيارات
-                                </div>
-
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    0
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    2
-                                </div>
+                                <div class="col-6 p-0" style="text-align:end;">  اسعار السيارات </div>
+                                <div class="col-3 Not-ended-Docs-Num text-center">  0 </div>
+                                <div class="col-3 ended-Docs-Num"> 2  </div>
                             </a>
                         </div>
                     </li>
@@ -365,9 +331,9 @@
                                                                     </div>
                                                                     <div class="col-auto centered-icon">
                                                                         <button type="button" class="border-0 bg-transparent Upload-Photo-Button" data-bs-toggle="modal" href="#IDphoto-modal"
-                                                                            data-active-icon="../../images/common/Static/ID photo icon.svg"
-                                                                            data-initial-icon="../../images/common/Static/nonActive ID photo icon.svg" style="display: none;">
-                                                                            <img src="../../images/common/Static/nonActive ID photo icon.svg"
+                                                                            data-active-icon="../../images/common/Static/CreateContract/ID photo icon.svg"
+                                                                            data-initial-icon="../../images/common/Static/CreateContract/nonActive ID photo icon.svg" style="display: none;">
+                                                                            <img src="../../images/common/Static/CreateContract/nonActive ID photo icon.svg"
                                                                                 style="width: 50px;">
                                                                         </button>
                                                                     </div>
@@ -627,7 +593,7 @@
                                                             <option value="عائلية كبيرة">عائلية كبيرة</option>
                                                         </select>
                                                     </div>
-                                                    <div class="row g-2 p-1 justify-content-end " id="carsContainer">
+                                                    <div class="row g-2 p-1 justify-content-end flex-grow-1" id="carsContainer">
                                                         <!-- Cars -->
                                                         <div class="col-xl-4 col-md-6 car-item"
                                                             data-type="سيدان متوسطة">
@@ -993,7 +959,7 @@
                                                     </div>
                                                     <!-- Pagination controls -->
                                                     <div
-                                                        class="d-flex justify-content-center mt-1 gap-2 pagination_Container">
+                                                        class="mt-1 gap-2 pagination_Container">
                                                         <button id="Cars_nextBtn" class="btn " type="button">
                                                             <i class="fa-solid fa-angles-left"></i></button>
                                                         <button id="Cars_PrevBtn" class="btn  me-2" type="button">
@@ -1172,9 +1138,9 @@
                                                                         <button type="button"
                                                                             class="border-0 bg-transparent Upload-Photo-Button"
                                                                             data-bs-toggle="modal" href="#IDphoto-modal"
-                                                                            data-active-icon="../../images/common/Static/ID photo icon.svg"
-                                                                            data-initial-icon="../../images/common/Static/nonActive ID photo icon.svg">
-                                                                            <img src="../../images/common/Static/nonActive ID photo icon.svg"
+                                                                            data-active-icon="../../images/common/Static/CreateContract/ID photo icon.svg"
+                                                                            data-initial-icon="../../images/common/Static/CreateContract/nonActive ID photo icon.svg">
+                                                                            <img src="../../images/common/Static/CreateContract/nonActive ID photo icon.svg"
                                                                                 style="width: 50px;">
                                                                         </button>
                                                                     </div>
@@ -1468,8 +1434,8 @@
                                                                             </div>
                                                                             <div class="col-auto centered-icon">
                                                                                 <button type="button" class="border-0 bg-transparent Upload-Photo-Button" data-bs-toggle="modal"href="#IDphoto-modal"
-                                                                                data-active-icon="../../images/common/Static/Licence Photo Icon.svg"  data-initial-icon="../../images/common/Static/nonActive Licence photo icon.svg">
-                                                                                    <img src="../../images/common/Static/nonActive Licence photo icon.svg" style="width: 50px;">
+                                                                                data-active-icon="../../images/common/Static/CreateContract/Licence Photo Icon.svg"  data-initial-icon="../../images/common/Static/CreateContract/nonActive Licence photo icon.svg">
+                                                                                    <img src="../../images/common/Static/CreateContract/nonActive Licence photo icon.svg" style="width: 50px;">
                                                                                 </button>
                                                                             </div>
                                                                         </div>
@@ -1672,9 +1638,9 @@
                                                                         <button type="button"
                                                                             class="border-0 bg-transparent Upload-Photo-Button"
                                                                             data-bs-toggle="modal" href="#IDphoto-modal"
-                                                                            data-active-icon="../../images/common/Static/ID photo icon.svg"
-                                                                            data-initial-icon="../../images/common/Static/nonActive ID photo icon.svg">
-                                                                            <img src="../../images/common/Static/nonActive ID photo icon.svg"
+                                                                            data-active-icon="../../images/common/Static/CreateContract/ID photo icon.svg"
+                                                                            data-initial-icon="../../images/common/Static/CreateContract/nonActive ID photo icon.svg">
+                                                                            <img src="../../images/common/Static/CreateContract/nonActive ID photo icon.svg"
                                                                                 style="width: 50px;">
                                                                         </button>
                                                                     </div>
@@ -1995,9 +1961,9 @@
                                                                                     class="border-0 bg-transparent Upload-Photo-Button"
                                                                                     data-bs-toggle="modal"
                                                                                     href="#IDphoto-modal"
-                                                                                    data-active-icon="../../images/common/Static/Licence Photo Icon.svg"
-                                                                                    data-initial-icon="../../images/common/Static/nonActive Licence photo icon.svg">
-                                                                                    <img src="../../images/common/Static/nonActive Licence photo icon.svg"
+                                                                                    data-active-icon="../../images/common/Static/CreateContract/Licence Photo Icon.svg"
+                                                                                    data-initial-icon="../../images/common/Static/CreateContract/nonActive Licence photo icon.svg">
+                                                                                    <img src="../../images/common/Static/CreateContract/nonActive Licence photo icon.svg"
                                                                                         style="width: 50px;">
                                                                                 </button>
                                                                             </div>
@@ -2285,7 +2251,7 @@
                                                                 <button type="button"
                                                                     class="btn check-btn d-flex align-items-center gap-2 TechnicalCheckUp_Btn"
                                                                     data-bs-toggle="modal" href="#TechnicalCheckUp">
-                                                                    <img src="../../images/common/Static/Car_Icon.svg">
+                                                                    <img src="../../images/common/Static/TechnicalCheckup/Car_Icon.svg">
                                                                     <span class="TechnicalCheckUp_Btn_Title">
                                                                         الفحص الفني</span>
                                                                 </button>
@@ -3021,7 +2987,8 @@
                                             <div class="row button-row align-items-center">
                                                 <div class="col-auto py-2 px-0  d-flex flex-wrap gap-1">
                                                     <button type="button" class="btn check-btn payment-button"
-                                                        id="SubmitFormBtn">حفظ
+                                                       id="SubmitFormBtn"
+                                                        >حفظ
                                                     </button>
                                                     <button type="button"
                                                         class="btn check-btn payment-button signature-button"
@@ -3083,23 +3050,23 @@
                                     <div class="row g-3 justify-content-center " id="TechnicalCheckUp-container">
                                         <div class="col-auto">
                                             <button id="bend-in-body-btn" class="TechnicalCheckUp-Btn p-2">
-                                                <img src="../../images/common/Static/bend-in-body.svg"> انحناء في الهيكل
+                                                <img src="../../images/common/Static/TechnicalCheckup/bend-in-body.svg"> انحناء في الهيكل
                                             </button>
                                         </div>
                                         <div class="col-auto">
                                             <button id="very-deep-scratch-btn" class="TechnicalCheckUp-Btn p-2"> <img
-                                                    src="../../images/common/Static/very-deep-scratch.svg"> خدش عميق جدًا
+                                                    src="../../images/common/Static/TechnicalCheckup/very-deep-scratch.svg"> خدش عميق جدًا
                                             </button>
 
                                         </div>
                                         <div class="col-auto">
                                             <button id="deep-scratch-btn" class="TechnicalCheckUp-Btn p-2">
-                                                <img src="../../images/common/Static/deep-scratch.svg"> خدش عميق </button>
+                                                <img src="../../images/common/Static/TechnicalCheckup/deep-scratch.svg"> خدش عميق </button>
 
                                         </div>
                                         <div class="col-auto">
                                             <button id="small-scratch-btn" class="TechnicalCheckUp-Btn p-2">
-                                                <img src="../../images/common/Static/small-scratch.svg"> خدش بسيط </button>
+                                                <img src="../../images/common/Static/TechnicalCheckup/small-scratch.svg"> خدش بسيط </button>
 
                                         </div>
                                     </div>
@@ -3113,13 +3080,13 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="row g-3">
-                                        <div class="col d-flex justify-content-center ">
+                                        <div class="col d-flex justify-content-center Undo-Redo-Container">
                                             <button id="undo-btn" class=" undo-redo-btn"><img
-                                                    src="../../images/common/Static/undo.svg"></button>
+                                                    src="../../images/common/Static/TechnicalCheckup/undo.svg"></button>
 
 
                                             <button id="redo-btn" class="undo-redo-btn mx-2 "><img
-                                                    src="../../images/common/Static/undo (2).svg"></button>
+                                                    src="../../images/common/Static/TechnicalCheckup/Redo.svg"></button>
 
                                         </div>
                                         <div class="col text-center">
@@ -3202,18 +3169,18 @@
                         <div class="row">
                             <div class="col">
                                 <div class="Id-btn-card p-2">
-                                    <img src="../../images/common/Static/signature/Pic.svg" class="w-100" id="UploadIDPic">
+                                    <img src="../../images/common/Static/UploadPicture/Pic.svg" class="w-100" id="UploadIDPic">
                                     <input type="file" id="IDimageUpload"  style="display: none;">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="Id-btn-card p-2">
-                                    <img src="../../images/common/Static/Camera.svg" class="w-100" id="openCamera">
+                                    <img src="../../images/common/Static/UploadPicture/Camera.svg" class="w-100" id="openCamera">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="Id-btn-card p-2">
-                                    <img src="../../images/common/Static/signature/save.svg" class="w-100" id="ID-photo-save">
+                                    <img src="../../images/common/Static/UploadPicture/save.svg" class="w-100" id="ID-photo-save">
                                 </div>
                             </div>
                         </div>
@@ -3222,33 +3189,28 @@
             </div>
         </div>
         <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%العقد الموحد%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-        <div class="modal fade" id="UnifiedContract" tabindex="-1" aria-labelledby="UnifiedContractLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="RenterCheck" tabindex="-1" aria-labelledby="RenterCheckLabel"
+            aria-hidden="true" data-bs-backdrop="static">
             <div class="modal-dialog  modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-header UnifiedContract-header">
-                        <h1 class="modal-title fs-5 m-auto" id="UnifiedContractLabel">العقد الموحد </h1>
-                        <button type="button" class="btn-close m-0 UnifiedContract-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
+                    <div class="modal-header RenterCheck-header border-0">
+                        <button type="button" class="btn-close m-0 p-1 RenterCheck-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h1 class="modal-title fs-5 m-auto" id="RenterCheckLabel"> التحقق من المستأجر </h1>
                     </div>
                     <div class="modal-body">
                         <div class="row justify-content-center gap-1">
                             <div class="col-auto">
-                                <button class="custom-img-button " data-bs-dismiss="modal" aria-label="Close"><img
-                                        src="../../images/common/Static/Frame 2608797 (1).svg"> غير موافق</button>
+                                <button class="custom-img-button"><img src="../../images/common/Static/messages_icons/email.svg"></button>
 
                             </div>
                             <div class="col-auto">
-                                <button class="custom-img-button"><img src="../../images/common/Static/Frame 2608797.svg"> موافق</button>
+                                <button class="custom-img-button"><img src="../../images/common/Static/messages_icons/sms.svg"></button>
                             </div>
-                            <div class="col-md-12 requird-field-row">
-                                <span class="requird-field text-center">الرمز المدخل غير صحيح </span>
-                            </div>
-                            <div class="col-md-12 text-center" style="color: #525252;">
-                                <p>عند الموافقة سيتم إرسال رمز التحقق إلى جوال المستأجر</p>
+                            <div class="col-auto">
+                                <button class="custom-img-button"><img src="../../images/common/Static/messages_icons/whatsup.svg"></button>
                             </div>
                         </div>
-                        <form class="otc mt-3" name="one-time-code" id="UnifiedContract-otc">
+                        <form class="otc mt-3" name="one-time-code" id="RenterCheck-otc">
                             <div class="row flex-row-reverse justify-content-center align-items-center text-center">
                                 <p>من فضلك ادخل رمز التحقق المرسل</p>
                                 <div class="col-md-auto">
@@ -3258,25 +3220,24 @@
                                 </div>
                                 <div class="col-md-auto">
                                     <div>
-                                        <input type="number" class="UnifiedContract-OTP OTP" pattern="[0-9]*" value=""
-                                            inputtype="numeric" autocomplete="one-time-code" id="UnifiedContract-otc-1"
-                                            name="UnifiedContract-otc-1">
-                                        <!-- Autocomplete not to put on other input -->
-                                        <input type="number" class="UnifiedContract-OTP OTP" pattern="[0-9]*" min="0"
+                                        <input type="number" class="RenterCheck-OTP OTP" pattern="[0-9]*" value=""
+                                            inputtype="numeric" autocomplete="one-time-code" id="RenterCheck-otc-1"
+                                            name="RenterCheck-otc-1">
+                                            <input type="number" class="RenterCheck-OTP OTP" pattern="[0-9]*" min="0"
                                             max="9" maxlength="1" value="" inputtype="numeric"
-                                            id="UnifiedContract-otc-2" name="UnifiedContract-otc-2" required>
-                                        <input type="number" class="UnifiedContract-OTP OTP" pattern="[0-9]*" min="0"
+                                            id="RenterCheck-otc-2" name="RenterCheck-otc-2" required>
+                                        <input type="number" class="RenterCheck-OTP OTP" pattern="[0-9]*" min="0"
                                             max="9" maxlength="1" value="" inputtype="numeric"
-                                            id="UnifiedContract-otc-3" name="UnifiedContract-otc-3" required>
-                                        <input type="number" class="UnifiedContract-OTP OTP" pattern="[0-9]*" min="0"
+                                            id="RenterCheck-otc-3" name="RenterCheck-otc-3" required>
+                                        <input type="number" class="RenterCheck-OTP OTP" pattern="[0-9]*" min="0"
                                             max="9" maxlength="1" value="" inputtype="numeric"
-                                            id="UnifiedContract-otc-4" name="UnifiedContract-otc-4" required>
-                                        <input type="number" class="UnifiedContract-OTP OTP" pattern="[0-9]*" min="0"
+                                            id="RenterCheck-otc-4" name="RenterCheck-otc-4" required>
+                                        <input type="number" class="RenterCheck-OTP OTP" pattern="[0-9]*" min="0"
                                             max="9" maxlength="1" value="" inputtype="numeric"
-                                            id="UnifiedContract-otc-5" name="UnifiedContract-otc-5" required>
-                                        <input type="number" class="UnifiedContract-OTP OTP" pattern="[0-9]*" min="0"
+                                            id="RenterCheck-otc-5" name="RenterCheck-otc-5" required>
+                                        <input type="number" class="RenterCheck-OTP OTP" pattern="[0-9]*" min="0"
                                             max="9" maxlength="1" value="" inputtype="numeric"
-                                            id="UnifiedContract-otc-6" name="UnifiedContract-otc-6" required>
+                                            id="RenterCheck-otc-6" name="RenterCheck-otc-6" required>
                                     </div>
 
                                 </div>
@@ -3284,27 +3245,26 @@
                                     <span class="requird-field text-center">الرمز المدخل غير صحيح </span>
                                 </div>
                                 <p class="modal-title w-100 my-2" style="font-size: .7rem;">
-                                    رمز التحقق تنتهي صلاحيته بعد<span id="UnifiedContractTimer">05:00</span>
+                                    رمز التحقق تنتهي صلاحيته بعد<span id="RenterCheckTimer">05:00</span>
                                 </p>
                             </div>
 
                             <div class="row  justify-content-center g-2">
                                 <div class="col-auto">
                                     <button type="button"
-                                        class="btn  check-btn  UnifiedContract-btn px-5 py-1 text-center"
-                                        disabled="true" id="Shemoos">
-                                        <div class="systems-check d-none" id="Shemoos-check"> <i
-                                                class="fa-solid fa-check text-white"></i> </div> شموس
+                                        class="btn  check-btn  RenterCheck-btn px-5 py-1 text-center"
+                                        disabled="true" id="rentarCheck">
+                                        <div class="systems-check d-none" id="rentarCheck-check"> <i class="fa-solid fa-check text-white"></i> </div> غير موافق
                                     </button>
                                 </div>
 
                                 <div class="col-auto">
-                                    <button type="button" class="btn check-btn UnifiedContract-btn  px-5 py-1"
+                                    <button type="button" class="btn check-btn RenterCheck-btn  px-5 py-1"
                                         disabled="true" id="Contract-Conclusion">
                                         <div class="systems-check d-none" id="Contract-Conclusion-check">
                                             <i class="fa-solid fa-check text-white"></i>
                                         </div>
-                                        إبرام العقد
+                                        موافق
                                     </button>
                                 </div>
 
@@ -3402,6 +3362,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../../js/Create_Contract_js/contract2.js"></script>
     <script src="../../js/Create_Contract_js/contract.js"></script>
+    
+
     <script>
         function closeWarning() {
             const warningSection = document.getElementById('warningSection');
@@ -3430,33 +3392,7 @@
         });
 
     </script>
-    <!-- script for the buttons in the payment fieldset نظام شموس و التويق ...etc -->
-    <!-- <script>
-        const buttons = document.querySelectorAll('.payment-button');
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const originalContent = button.innerHTML;
-
-                const spinner = document.createElement('div');
-                spinner.classList.add('spinner-border', 'spinner-border-sm', 'text-warning');
-                spinner.role = 'status';
-
-                const checkIcon = document.createElement('i');
-                checkIcon.classList.add('fa-solid', 'fa-check');
-
-                button.innerHTML = '';
-                button.appendChild(spinner);
-                button.classList.add('spinner-payment-check');
-
-                setTimeout(() => {
-                    button.innerHTML = originalContent;
-                    const checkDiv = button.querySelector('.row .col-auto .systems-check');
-                    checkDiv.style.backgroundColor = 'green';
-                    button.classList.remove('spinner-payment-check');
-                }, 2000);
-            });
-        });
-    </script> -->
+   
     <!-- script for جهة العمل و الجنسيات و المنطقة / المدينة dropdown autocomplete list -->
     <script>
         const dataLists = {
@@ -3521,211 +3457,179 @@
         });
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const otcInputs = document.querySelectorAll('.UnifiedContract-OTP');
-            const ShemoosBtn = document.getElementById('Shemoos');
-            const ContractConclusionButton = document.getElementById('Contract-Conclusion');
-            const ContractConclusionCheck = document.getElementById('Contract-Conclusion-check');
-            const ShemoosCheck = document.getElementById('Shemoos-check');
-            const agreeButton = document.querySelector('.custom-img-button img[src*="Frame 2608797.svg"]').parentNode;
-            const disagreeButton = document.querySelector('.custom-img-button img[src*="Frame 2608797 (1).svg"]').parentNode;
-
-            function TimerFunction() {
-                const display = document.querySelector('#UnifiedContractTimer');
-                let timer = 300, minutes, seconds;
-                const interval = setInterval(function () {
-                    minutes = parseInt(timer / 60, 10);
-                    seconds = parseInt(timer % 60, 10);
-
-                    minutes = minutes < 10 ? "0" + minutes : minutes;
-                    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                    display.textContent = minutes + ":" + seconds;
-
-                    if (--timer < 0) {
-                        clearInterval(interval);
-                        $('#UnifiedContract').modal('hide');
-                    }
-                }, 1000);
-            }
-
-            otcInputs.forEach(input => {
-                input.disabled = true;
-            });
-
-            agreeButton.addEventListener('click', function () {
-                this.innerHTML = `<span class="loader"></span> موافق`;
-                setTimeout(() => {
-                    this.innerHTML = `<img src="../../images/common/Static/Frame 2608797.svg" alt="موافق"> موافق`;
-                    otcInputs.forEach(input => {
-                        input.disabled = false;
-                    });
-                    otcInputs[0].focus();
-                    TimerFunction();
-                    agreeButton.disabled = true;
-                    disagreeButton.disabled = true;
-                }, 2000);
-            });
-
-
-            const checkOtpInputs = () => {
-                const allFilled = Array.from(otcInputs).every(input => input.value.length > 0);
-                if (allFilled) {
-                    ContractConclusionButton.disabled = false;
-                    ContractConclusionCheck.classList.remove('d-none');
-                } else {
-                    ContractConclusionButton.disabled = true;
-                    ContractConclusionCheck.classList.add('d-none');
-                }
-            };
-
-            otcInputs.forEach(input => {
-                input.addEventListener('input', checkOtpInputs);
-            });
-            let ContractConclusion = true
-            ContractConclusionButton.addEventListener('click', function () {
-                this.classList.add('loader-active');
-                this.innerHTML = `<span class="loader small-loader"></span>`;
-                setTimeout(() => {
-                    if (ContractConclusion) {
-                        this.innerHTML = `<div class="systems-check" style="background-color: green;"><i class="fa-solid fa-check text-white"></i></div> إبرام العقد`;
-                        ShemoosBtn.disabled = false;
-                        ShemoosCheck.classList.remove('d-none');
-                        this.classList.remove('loader-active');
-                    }
-                    else {
-                        this.innerHTML = `<div class="systems-check"><i class="fa-solid fa-check text-white"></i></div> إبرام العقد`;
-                        this.classList.remove('loader-active');
-
-                    }
-
-
-                }, 2000);
-            });
-            let Shemoos = true
-
-            ShemoosBtn.addEventListener('click', function () {
-                this.classList.add('loader-active');
-                this.innerHTML = `<span class="loader small-loader"></span>`;
-                setTimeout(() => {
-                    if (Shemoos) {
-                        this.innerHTML = `<div class="systems-check" style="background-color: green;"><i class="fa-solid fa-check text-white"></i></div> شموس`;
-                        this.classList.remove('loader-active');
-                    } else {
-                        this.innerHTML = `<div class="systems-check"><i class="fa-solid fa-check text-white"></i></div> شموس`;
-                        this.classList.remove('loader-active');
-                    }
-
-                }, 2000);
-            });
-        });
-    </script>
-
     <script src="../../js/Create_Contract_js/Loader.js"></script>
     <!-- فلتر السيارات -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const carItems = document.querySelectorAll('.Avaliable_cars .car-item');
-            let itemsPerPage = 3;
-            let currentPage = 0;
-            let filteredCars = Array.from(carItems);
-            let previousWidth = window.innerWidth;
+document.addEventListener('DOMContentLoaded', function () {
+    const carItems = document.querySelectorAll('.Avaliable_cars .car-item');
+    let itemsPerPage = 3;
+    let currentPage = 0;
+    let filteredCars = Array.from(carItems);
+    let previousWidth = window.innerWidth;
 
-            function debounce(func, wait) {
-                let timeout;
-                return function (...args) {
-                    clearTimeout(timeout);
-                    timeout = setTimeout(() => func(...args), wait);
-                };
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func(...args), wait);
+        };
+    }
+
+    function showPage(page) {
+        const startIndex = page * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        carItems.forEach(car => {
+            car.style.display = 'none';
+        });
+        filteredCars.forEach((car, index) => {
+            if (index >= startIndex && index < endIndex) {
+                car.style.display = 'block';
             }
-
-            function showPage(page) {
-                const startIndex = page * itemsPerPage;
-                const endIndex = startIndex + itemsPerPage;
-
-                carItems.forEach(car => {
-                    car.style.display = 'none';
-                });
-
-                filteredCars.forEach((car, index) => {
-                    if (index >= startIndex && index < endIndex) {
-                        car.style.display = 'block';
-                    }
-                });
-
-                document.getElementById('Cars_PrevBtn').disabled = page === 0;
-                document.getElementById('Cars_nextBtn').disabled = endIndex >= filteredCars.length;
-
-                const noCarsMessage = document.getElementById('noCarsMessage');
-                if (filteredCars.length === 0) {
-                    if (!noCarsMessage) {
-                        const messageDiv = document.createElement('div');
-                        messageDiv.id = 'noCarsMessage';
-                        messageDiv.className = 'no-cars';
-                        messageDiv.innerHTML = '<p>لا توجد سيارات تطابق معايير التصفية</p>';
-                        document.getElementById('carsContainer').appendChild(messageDiv);
-                    }
-                } else if (noCarsMessage) {
-                    noCarsMessage.remove();
-                }
+        });
+        document.getElementById('Cars_PrevBtn').disabled = page === 0;
+        document.getElementById('Cars_nextBtn').disabled = endIndex >= filteredCars.length;
+        const noCarsMessage = document.getElementById('noCarsMessage');
+        if (filteredCars.length === 0) {
+            if (!noCarsMessage) {
+                const messageDiv = document.createElement('div');
+                messageDiv.id = 'noCarsMessage';
+                messageDiv.className = 'no-cars';
+                messageDiv.innerHTML = '<p>لا توجد سيارات تطابق معايير التصفية</p>';
+                document.getElementById('carsContainer').appendChild(messageDiv);
             }
+        } else if (noCarsMessage) {
+            noCarsMessage.remove();
+        }
+    }
 
-            document.getElementById('Cars_PrevBtn').addEventListener('click', function () {
-                if (currentPage > 0) {
-                    currentPage--;
-                    showPage(currentPage);
-                }
-            });
+    document.getElementById('Cars_PrevBtn').addEventListener('click', function () {
+        if (currentPage > 0) {
+            currentPage--;
+            showPage(currentPage);
+        }
+    });
 
-            document.getElementById('Cars_nextBtn').addEventListener('click', function () {
+    document.getElementById('Cars_nextBtn').addEventListener('click', function () {
+        if ((currentPage + 1) * itemsPerPage < filteredCars.length) {
+            currentPage++;
+            showPage(currentPage);
+        }
+    });
+
+    document.getElementById('carFilter').addEventListener('change', function (e) {
+        const selectedType = e.target.value;
+        if (selectedType === 'all') {
+            filteredCars = Array.from(carItems);
+        } else {
+            filteredCars = Array.from(carItems).filter(car =>
+                car.getAttribute('data-type') === selectedType
+            );
+        }
+        currentPage = 0;
+        showPage(currentPage);
+    });
+
+    function updateItemsPerPage() {
+        const previousItemsPerPage = itemsPerPage;
+        if (window.innerWidth <= 1199) {
+            itemsPerPage = 2;
+        } else {
+            itemsPerPage = 3;
+        }
+        if (itemsPerPage !== previousItemsPerPage) {
+            currentPage = 0;
+            showPage(currentPage);
+        }
+    }
+
+    // =============== Swipe =============== //
+    const carouselEl = document.querySelector('.Avaliable_cars');
+    if (carouselEl) {
+        let startX = 0;
+        let startY = 0;
+        let isSwiping = false;
+        let isMouseDown = false;
+
+        function En_Direction() {
+            return document.documentElement.dir === "rtl" ||
+                document.body.dir === "rtl" ||
+                getComputedStyle(document.body).direction === "rtl";
+        }
+
+        function handleSwipeEnd(endX) {
+            if (!isSwiping) return;
+            const diff = startX - endX;
+            const SWIPE_THRESHOLD = 50;
+            const goNext = En_Direction() ? diff > SWIPE_THRESHOLD  : diff < -SWIPE_THRESHOLD;
+            const goPrev = En_Direction() ? diff < -SWIPE_THRESHOLD : diff > SWIPE_THRESHOLD;
+
+            if (goNext) {
                 if ((currentPage + 1) * itemsPerPage < filteredCars.length) {
                     currentPage++;
                     showPage(currentPage);
                 }
-            });
-
-            document.getElementById('carFilter').addEventListener('change', function (e) {
-                const selectedType = e.target.value;
-
-                if (selectedType === 'all') {
-                    filteredCars = Array.from(carItems);
-                } else {
-                    filteredCars = Array.from(carItems).filter(car =>
-                        car.getAttribute('data-type') === selectedType
-                    );
-                }
-
-                currentPage = 0;
-                showPage(currentPage);
-            });
-
-            function updateItemsPerPage() {
-                const previousItemsPerPage = itemsPerPage;
-
-                if (window.innerWidth <= 1199) {
-                    itemsPerPage = 2;
-                } else {
-                    itemsPerPage = 3;
-                }
-
-                if (itemsPerPage !== previousItemsPerPage) {
-                    currentPage = 0;
+            } else if (goPrev) {
+                if (currentPage > 0) {
+                    currentPage--;
                     showPage(currentPage);
                 }
             }
+            isSwiping = false;
+        }
 
-            updateItemsPerPage();
-            showPage(currentPage);
+        carouselEl.addEventListener("touchstart", function (e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isSwiping = false;
+        }, { passive: true });
 
-            window.addEventListener('resize', debounce(() => {
-                const currentWidth = window.innerWidth;
-                if (currentWidth !== previousWidth) {
-                    previousWidth = currentWidth;
-                    updateItemsPerPage();
-                }
-            }, 50));
+        carouselEl.addEventListener("touchmove", function (e) {
+            const deltaX = Math.abs(e.touches[0].clientX - startX);
+            const deltaY = Math.abs(e.touches[0].clientY - startY);
+            if (deltaX > deltaY && deltaX > 10) isSwiping = true;
+        }, { passive: true });
+
+        carouselEl.addEventListener("touchend", function (e) {
+            handleSwipeEnd(e.changedTouches[0].clientX);
+        }, { passive: true });
+
+        carouselEl.addEventListener("mousedown", function (e) {
+            startX = e.clientX;
+            startY = e.clientY;
+            isMouseDown = true;
+            isSwiping = false;
         });
+
+        carouselEl.addEventListener("mousemove", function (e) {
+            if (!isMouseDown) return;
+            const deltaX = Math.abs(e.clientX - startX);
+            const deltaY = Math.abs(e.clientY - startY);
+            if (deltaX > deltaY && deltaX > 10) isSwiping = true;
+        });
+
+        carouselEl.addEventListener("mouseup", function (e) {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+            handleSwipeEnd(e.clientX);
+        });
+
+        carouselEl.addEventListener("mouseleave", function (e) {
+            if (!isMouseDown) return;
+            isMouseDown = false;
+            handleSwipeEnd(e.clientX);
+        });
+    }
+    updateItemsPerPage();
+    showPage(currentPage);
+
+    window.addEventListener('resize', debounce(() => {
+        const currentWidth = window.innerWidth;
+        if (currentWidth !== previousWidth) {
+            previousWidth = currentWidth;
+            updateItemsPerPage();
+        }
+    }, 50));
+});
     </script>
     <!-- عرض البيانات التفصيلية للسيارات المتاحة -->
     <script>
@@ -4358,6 +4262,7 @@
             checkbox.addEventListener('change', () => calculateSum('options', 1));
         });
     </script>
+  
 
 </body>
 
