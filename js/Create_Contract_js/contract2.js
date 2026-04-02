@@ -57,7 +57,7 @@ function ImgUpload() {
 
             heic2any({
               blob: f,
-              toType: "image/jpeg",
+              toType: "image/png",
             })
               .then(function (convertedBlob) {
                 var reader = new FileReader();
@@ -369,6 +369,7 @@ function SaveWrittenSignature() {
   var canvas = document.getElementById("canvas");
   var dataURL = canvas.toDataURL();
   Previewing_Signature(dataURL)
+  document.getElementById("previewSignature").src = dataURL;
   $("#signature-modal").modal("hide");
 }
 
@@ -380,8 +381,8 @@ function SaveUplodedSignature() {
   canvas.height = img.height;
   const context = canvas.getContext("2d");
   context.drawImage(img, 0, 0, canvas.width, canvas.height);
-  const base64 = canvas.toDataURL("image/jpeg");
-  console.log(base64);
+  const base64 = canvas.toDataURL("image/png");
+  document.getElementById("previewSignature").src = base64;
   $("#signature-modal").modal("hide");
 }
 // // // //////////////////////////////////////////////// عرض صورة التوقيع ////////////////////////////////////////////////////////////////////////
@@ -448,7 +449,7 @@ function Previewing_Signature(imageURL){
     script.textContent = `
         function forceReflow() {
             document.body.style.display = 'none';
-            document.body.offsetHeight; // Force reflow
+            document.body.offsetHeight; 
             document.body.style.display = 'flex';
             
             window.dispatchEvent(new Event('resize'));
@@ -671,7 +672,7 @@ function openImageInNewTab(imageDataUrl) {
     script.textContent = `
         function forceReflow() {
             document.body.style.display = 'none';
-            document.body.offsetHeight; // Force reflow
+            document.body.offsetHeight; 
             document.body.style.display = 'flex';
             
             window.dispatchEvent(new Event('resize'));
@@ -710,7 +711,7 @@ function SaveUplodedIDphoto() {
 
   const context = canvas.getContext("2d");
   context.drawImage(img, 0, 0, canvas.width, canvas.height);
-  const base64 = canvas.toDataURL("image/jpeg");
+  const base64 = canvas.toDataURL("image/png");
   console.log(base64);
   $("#IDphoto-modal").modal("hide");
   return true;
@@ -737,7 +738,7 @@ function SaveCameraIDphoto() {
 
   const context = canvas.getContext("2d");
   context.drawImage(img, 0, 0, canvas.width, canvas.height);
-  const base64 = canvas.toDataURL("image/jpeg");
+  const base64 = canvas.toDataURL("image/png");
   console.log(base64);
   $("#IDphoto-modal").modal("hide");
   return true;
