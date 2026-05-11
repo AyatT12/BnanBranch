@@ -1,5 +1,5 @@
-// <!-- show main carouse items by bottons ( etc ,مؤجرة , احصائيات) -->
-// <!-- and control Pagination -->
+// // <!-- show main carouse items by bottons ( etc ,مؤجرة , احصائيات) -->
+// // <!-- and control Pagination -->
 const carouselsConfig = {
   1: { currentPage: 0, itemsPerPage: 3, filteredCars: [] },
   2: { currentPage: 0, itemsPerPage: 3, filteredCars: [] },
@@ -7,7 +7,7 @@ const carouselsConfig = {
   4: { currentPage: 0, itemsPerPage: 3, filteredCars: [] },
   5: { currentPage: 0, itemsPerPage: 3, filteredCars: [] },
 };
-// ===============added=================== //
+
 let previousWidth = window.innerWidth;
 
 function debounce(func, wait) {
@@ -21,13 +21,13 @@ function debounce(func, wait) {
     timeout = setTimeout(later, wait);
   };
 }
-// ================================== //
+
 document.addEventListener("DOMContentLoaded", function () {
   for (let i = 1; i <= 5; i++) {
     initCarousel(i);
   }
   showCarouselItem(1);
-  // ===============added=================== //
+
   window.addEventListener(
     "resize",
     debounce(() => {
@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 50)
   );
-  // ================================= //
 });
 
 function initCarousel(carouselNumber) {
@@ -63,15 +62,13 @@ function initCarousel(carouselNumber) {
     .getElementById(`nextBtn${carouselNumber}`)
     ?.addEventListener("click", function () {
       if (
-        (config.currentPage + 1) * config.itemsPerPage <
-        config.filteredCars.length
+        (config.currentPage + 1) * config.itemsPerPage < config.filteredCars.length
       ) {
         config.currentPage++;
         showPage(carouselNumber);
       }
     });
 
-  // Set up event listener for filter
   document
     .getElementById(`carFilter${carouselNumber}`)
     ?.addEventListener("change", function (e) {
@@ -89,16 +86,95 @@ function initCarousel(carouselNumber) {
       showPage(carouselNumber);
     });
 
+// =============== Touch / Mouse Swipe =============== //
+  const carouselEl = document.getElementById(`carouselItem${carouselNumber}`);
+  if (carouselEl) {
+    let startX = 0;
+    let startY = 0;
+    let isSwiping = false;
+    let isMouseDown = false;
+
+    function En_Direction() {
+      return document.documentElement.dir === "rtl" ||
+             document.body.dir === "rtl" ||
+             getComputedStyle(document.body).direction === "rtl";
+    }
+
+    function handleSwipeEnd(endX) {
+      if (!isSwiping) return;
+      const diff = startX - endX;
+      const SWIPE_THRESHOLD = 50;
+      const goNext = En_Direction() ? diff > SWIPE_THRESHOLD  : diff < -SWIPE_THRESHOLD;
+      const goPrev = En_Direction() ? diff < -SWIPE_THRESHOLD : diff > SWIPE_THRESHOLD;
+
+      if (goNext) {
+        if ((config.currentPage + 1) * config.itemsPerPage < config.filteredCars.length) {
+          config.currentPage++;
+          showPage(carouselNumber);
+        }
+      } else if (goPrev) {
+        if (config.currentPage > 0) {
+          config.currentPage--;
+          showPage(carouselNumber);
+        }
+      }
+      isSwiping = false;
+    }
+
+    // Touch 
+    carouselEl.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isSwiping = false;
+    }, { passive: true });
+
+    carouselEl.addEventListener("touchmove", function (e) {
+      const deltaX = Math.abs(e.touches[0].clientX - startX);
+      const deltaY = Math.abs(e.touches[0].clientY - startY);
+      if (deltaX > deltaY && deltaX > 10) isSwiping = true;
+    }, { passive: true });
+
+    carouselEl.addEventListener("touchend", function (e) {
+      handleSwipeEnd(e.changedTouches[0].clientX);
+    }, { passive: true });
+
+    // Mouse 
+    carouselEl.addEventListener("mousedown", function (e) {
+      startX = e.clientX;
+      startY = e.clientY;
+      isMouseDown = true;
+      isSwiping = false;
+    });
+
+    carouselEl.addEventListener("mousemove", function (e) {
+      if (!isMouseDown) return;
+      const deltaX = Math.abs(e.clientX - startX);
+      const deltaY = Math.abs(e.clientY - startY);
+      if (deltaX > deltaY && deltaX > 10) isSwiping = true;
+    });
+
+    carouselEl.addEventListener("mouseup", function (e) {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      handleSwipeEnd(e.clientX);
+    });
+
+    carouselEl.addEventListener("mouseleave", function (e) {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      handleSwipeEnd(e.clientX);
+    });
+  }
+  // =========================================================== //
+
   showPage(carouselNumber);
-  // ===============edited=================== //
   updateItemsPerPage(carouselNumber);
 }
-// ================================== //
+
 function updateItemsPerPage(carouselNumber) {
   const config = carouselsConfig[carouselNumber];
-  // ===============edited=================== //
   const previousItemsPerPage = config.itemsPerPage;
-  console.log(window.innerWidth);
+
   if (window.innerWidth <= 1199) {
     if (carouselNumber == 1) {
       config.itemsPerPage = 3;
@@ -108,11 +184,11 @@ function updateItemsPerPage(carouselNumber) {
   } else {
     config.itemsPerPage = 3;
   }
+
   if (previousItemsPerPage !== config.itemsPerPage) {
     config.currentPage = 0;
     showPage(carouselNumber);
   }
-  // ================================== //
 }
 
 function showPage(carouselNumber) {
@@ -161,7 +237,6 @@ function showCarouselItem(itemNumber, event) {
     showPage(itemNumber);
   }
 }
-
 // <!-- عرض البيانات التفصيلية للسيارات المتاحة -->
 // بيانات السيارات
 const carsData = {
@@ -1217,19 +1292,8 @@ function loadMaintenanceTab(carData) {
                 </div>
             `;
 }
-// <!-- Toggle Reasons List For Not Avaliables Cars -->
-function toggleReasons(button) {
-  const reasonsList = button.nextElementSibling;
-  const chevron = button.querySelector(".fa-chevron-down");
 
-  reasonsList.classList.toggle("show");
 
-  if (reasonsList.classList.contains("show")) {
-    chevron.style.transform = "rotate(180deg)";
-  } else {
-    chevron.style.transform = "rotate(0deg)";
-  }
-}
 // Close the warnning nav
 function closeWarning() {
   const warningSection = document.getElementById("warningSection");

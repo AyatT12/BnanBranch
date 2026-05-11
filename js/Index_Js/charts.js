@@ -10,7 +10,7 @@ var balanceOptions = {
   colors: ["rgba(54,162,235,1)", "rgba(255,99,132,1)"],
   chart: {
     type: "bar",
-    height: 400,
+    height: "100%",
     fontFamily: "'Cairo','Arial',sans-serif",
     toolbar: { show: false }
   },
@@ -66,37 +66,119 @@ new ApexCharts(
   balanceOptions
 ).render();
 // 
-var contractsOptions = {
-  series: [1, 1, 1, 0],
-  labels: [
-    rtlLabel("لاحقًا"),
-    rtlLabel("غدًا"),
-    rtlLabel("اليوم"),
-    rtlLabel("منتهية")
-  ],
-  colors: [
-    "rgba(54,162,235,1)",
-    "#9966FF",
-    "rgba(242,143,36,1)",
-    "rgba(242,36,36,1)"
-  ],
+var allSeries = [0, 1, 1, 2];
+var allLabels = [rtlLabel("منتهية") ,rtlLabel("اليوم"), rtlLabel("غدًا"), rtlLabel("لاحقًا"),   ];
+var allColors = [
+  "rgba(242,36,36,1)",
+  "rgba(242,143,36,1)",
+  "#9966FF",
+  "rgba(54,162,235,1)",
+];
+
+var hiddenIndexes = [];
+var activeIndexes = allSeries.map((v, i) => i).filter(i => allSeries[i] > 0);
+var chartRendered = true;
+
+function buildCustomLegend() {
+  var legendEl = document.querySelector("#ContractsChartLegend");
+  legendEl.innerHTML = "";
+  allLabels.forEach(function(label, i) {
+    var isHidden = hiddenIndexes.includes(i);
+    var item = document.createElement("span");
+    item.style.cssText = `
+      display:inline-flex; align-items:center; gap:5px;
+      margin: 0 8px; cursor:pointer; font-family:'Cairo',Arial,sans-serif;
+      font-size:13px; opacity:${isHidden ? '0.4' : '1'};
+      text-decoration:${isHidden ? 'line-through' : 'none'};
+      transition: opacity 0.3s;
+    `;
+    item.innerHTML = `
+      <span>${label}</span>
+      <span style="width:10px;height:10px;border-radius:50%;background:${allColors[i]};display:inline-block;flex-shrink:0"></span>
+    `;
+    if (allSeries[i] > 0) {
+      item.addEventListener("click", function() {
+        if (hiddenIndexes.includes(i)) {
+          hiddenIndexes = hiddenIndexes.filter(x => x !== i);
+        } else {
+          hiddenIndexes.push(i);
+        }
+        redrawChart();
+      });
+    } else {
+      item.style.cursor = "default";
+    }
+    legendEl.appendChild(item);
+  });
+}
+
+function redrawChart() {
+  var chartEl = document.querySelector("#ContractsChart");
+  var allRealHidden = activeIndexes.every(i => hiddenIndexes.includes(i));
+
+  buildCustomLegend();
+
+  var visibleIndexes = activeIndexes.filter(i => !hiddenIndexes.includes(i));
+  var newSeries = visibleIndexes.map(i => allSeries[i]);
+  var newLabels = visibleIndexes.map(i => allLabels[i]);
+  var newColors = visibleIndexes.map(i => allColors[i]);
+
+  if (allRealHidden) {
+    chartEl.style.visibility = "hidden";
+    chartEl.style.minHeight = "revert-layer";
+
+    chartInstance.destroy();
+    chartRendered = false;
+
+    var defaultSeries = activeIndexes.map(i => allSeries[i]);
+    var defaultLabels = activeIndexes.map(i => allLabels[i]);
+    var defaultColors = activeIndexes.map(i => allColors[i]);
+
+    chartInstance = new ApexCharts(chartEl, {
+      ...contractsBaseOptions,
+      series: defaultSeries,
+      labels: defaultLabels,
+      colors: defaultColors,
+    });
+    chartInstance.render();
+
+  } else {
+    chartEl.style.visibility = "visible";
+    
+    chartInstance.updateOptions({
+      series: newSeries,
+      labels: newLabels,
+      colors: newColors,
+    }, true, true);
+  }
+}
+
+var contractsBaseOptions = {
   chart: {
     type: "pie",
     fontFamily: "'Cairo','Arial',sans-serif",
-    height:"290"
+    height: "80%",
+    animations: {
+      enabled: true,
+      easing: 'easeinout',
+      speed: 600,
+    }
   },
-  legend: {
-    position: "bottom",
-    horizontalAlign: "center"
-  },
+  legend: { show: false },
   dataLabels: { enabled: false }
 };
 
-new ApexCharts(
+var chartInstance = new ApexCharts(
   document.querySelector("#ContractsChart"),
-  contractsOptions
-).render();
-
+  {
+    ...contractsBaseOptions,
+    series: allSeries.filter((v, i) => v > 0),
+    labels: allLabels.filter((v, i) => allSeries[i] > 0),
+    colors: allColors.filter((v, i) => allSeries[i] > 0),
+  }
+);
+chartInstance.render();
+buildCustomLegend();
 // 
 var carsOptions = {
   series: [4, 1, 30, 0],
@@ -109,7 +191,7 @@ var carsOptions = {
   chart: {
     type: "radialBar",
     fontFamily: "'Cairo','Arial',sans-serif",
-    height:"350"
+    // height:"350"
   },
   plotOptions: {
     radialBar: {
