@@ -5,17 +5,14 @@ body {
   font-size: .875rem;
   letter-spacing: 0.28px;
   font-weight: 400;
-
+  height: 100dvh;
 }
 
 #content-wrapper {
   display: flex !important;
-  height: 100vh;
+  /* height: 100dvh; */
 }
 
-#content {
-  height: 100%;
-}
 
 /*=======================Navbar======================*/
 nav {
@@ -93,93 +90,19 @@ nav {
   align-items: center;
 }
 
-/*=======================topbar  warnings line ======================*/
-.warning-section {
-  background-color: rgb(253 253 253 / 56%);
-  text-align: center;
-  box-shadow: 0px 1px 3px 1px #dbd4d496;
-  backdrop-filter: blur(10px);
-  padding: 0.75rem;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  flex: 1;
-  max-width: 80%;
-  margin: 0 1rem;
-}
-
-.marquee {
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-}
-
-.marquee-content {
-  display: flex;
-  gap: 5rem;
-  animation: marquee 15s linear infinite;
-  color: #C32222;
-  font-weight: 500;
-}
-
-.marquee-content:hover {
-  animation-play-state: paused;
-  ;
-}
-
-.marquee-content p {
-  margin-bottom: 0;
-}
-
-@keyframes marquee {
-  100% {
-    transform: translateX(100%);
-  }
-
-  0% {
-    transform: translateX(-100%);
-  }
-}
-
-.marquee-xmark {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: #C32222;
-  border-radius: 50%;
-  cursor: pointer;
-  color: white;
-  font-size: 16px;
-  border: white 1px solid;
-}
-
-
-@media (max-width: 991px) {
-  .navbar {
-    flex-wrap: wrap;
-    height: auto;
-    gap: 1rem;
-  }
-
-  .warning-section {
-    order: 3;
-    flex-basis: 100%;
-    max-width: 100%;
-    margin: 0;
-  }
-}
-
 /*======================= Cards Contnt Section ======================*/
 
 #cardBody {
   background-color: rgba(255, 255, 250, 1);
   border: 3px solid #FF9626;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-carousel-item {
   display: none;
-  height: 100%;
+  flex: 1;
 }
 
 .main-carousel-item.active {
@@ -230,6 +153,7 @@ nav {
   width: 100%;
   max-width: 250px;
   margin-bottom: 1rem;
+  white-space: nowrap;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -287,7 +211,8 @@ nav {
 .btn-Pages {
   border-color: rgb(252, 212, 126);
   border: 1px solid #FF9626;
-  width: 90%;
+  width: 100%;
+  white-space: nowrap;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   border-radius: 8px;
   padding: 0.5rem 0.5rem;
@@ -395,29 +320,35 @@ footer {
   font-size: 1.2rem;
   letter-spacing: 0.32px;
 }
+
 .modal-header {
   color: rgb(0, 0, 0);
   border-radius: 0.5rem 0.5rem 0 0;
 }
-.modal-content{
+
+.modal-content {
   border-radius: 10px;
   border: 3px solid orange;
 }
+
 /*======================= Rate Modal ======================*/
-.rate-card{
-    box-shadow: 2px 2px 11px #ff962657;
-    border-radius: 10px;
-    padding: 4px 8px;
-    min-width: 75px;
-    cursor: pointer;
+.rate-card {
+  box-shadow: 2px 2px 11px #ff962657;
+  border-radius: 10px;
+  padding: 4px 8px;
+  min-width: 75px;
+  cursor: pointer;
 }
-.rate-card:hover{
-    box-shadow: inset 2px 2px 11px #ff962657;
+
+.rate-card:hover {
+  box-shadow: inset 2px 2px 11px #ff962657;
 }
-.rate-text{
+
+.rate-text {
   white-space: nowrap;
 }
-.rate-col-img{
+
+.rate-col-img {
   justify-content: center;
 }
 
@@ -458,7 +389,7 @@ footer {
   color: #D9D9D9;
 }
 
-.password-input{
+.password-input {
   border-radius: 8px;
   border: 2px solid #faa64d;
   resize: none;
@@ -466,21 +397,24 @@ footer {
   min-height: 48px !important;
 }
 
-.password-input:focus{
+.password-input:focus {
   box-shadow: none !important;
   border: 2px solid #facd9c !important;
 }
+
 .PassWord-invaildBox {
-    margin-top: .25rem;
-    min-height: 20px;
+  margin-top: .25rem;
+  min-height: 20px;
 }
+
 .Password-invalid-feedback {
-    color: red;
-    display: block;
-    font-size: 12px;
-    margin-top: 0rem;
-    text-align: end;
+  color: red;
+  display: block;
+  font-size: 12px;
+  margin-top: 0rem;
+  text-align: end;
 }
+
 /*======================= Feed Modal ======================*/
 /* تغذية الصندوق */
 .feed-acceptt-btn {
@@ -817,14 +751,14 @@ footer {
     overflow-y: auto;
   }
 
-  #carouselItem1,
+  /* #carouselItem1,
   #carouselItem2,
   #carouselItem3,
   #carouselItem4,
   #carouselItem5 {
     height: 52vh;
     min-height: 30rem;
-  }
+  } */
 }
 
 @media (min-width:2380px) and (max-height:1200px) {
@@ -847,6 +781,7 @@ footer {
   width: 100%;
   direction: rtl;
 }
+
 .chart-card {
   background: white;
   border-radius: 20px;
@@ -855,9 +790,9 @@ footer {
   transition: all 0.4s ease;
   border: none;
   height: 100%;
-  min-height: 23rem;
+  min-height: 21.25rem;
   display: flex;
-  gap: 5px;
+  /* gap: 5px; */
   justify-content: space-between;
 }
 
@@ -865,14 +800,16 @@ footer {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
-.chart-card .card-body{
+
+.chart-card .card-body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .chart-card {
   height: 100%;
-  min-height: 250px; 
+  min-height: 250px;
 }
 
 #BalanceChart,
@@ -880,26 +817,42 @@ footer {
 #CarsChart {
   width: 100%;
   height: 100%;
-  letter-spacing:normal;
+  letter-spacing: normal;
 }
-#cardBody{
+
+#BalanceChart {
+  min-height: 350px;
+}
+
+#ContractsChart,
+#CarsChart {
+  min-height: 300px !important;
+}
+
+#cardBody {
   direction: rtl;
 }
-.Available_Car_Card{
+
+.Available_Car_Card {
   direction: ltr;
 }
-.car-icons{
+
+.car-icons {
   direction: ltr;
 }
-.chart-card{
+
+.chart-card {
   direction: rtl;
 }
+
 @media (min-width:1200px) {
-#nextBtn1,
-#prevBtn1 {
-  display: none;
+
+  #nextBtn1,
+  #prevBtn1 {
+    display: none;
+  }
 }
-}
+
 /* Chart Data */
 .card-menu-icon {
   position: absolute;
@@ -941,14 +894,18 @@ footer {
   margin: 0px 3px;
   font-size: 12px;
 }
-.car-item{
+
+.car-item {
   position: relative;
+  flex-direction: column;
 }
+
 .chart-p,
 .card-info-popup {
   direction: rtl;
   text-align: right;
 }
+
 /*  */
 .apexcharts-xaxis text,
 .apexcharts-legend-text,
@@ -969,9 +926,8 @@ footer {
   overflow: visible;
   transition: all 0.3s ease;
   display: flex;
-  gap: 5px;
+  /* gap: 5px; */
   align-items: center;
-
 }
 
 .car-card:hover {
@@ -981,9 +937,7 @@ footer {
 
 
 .buttons-container {
-  height: 80%;
   display: flex;
-  height: 80%;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -995,7 +949,7 @@ footer {
     align-items: center;
     flex-direction: row-reverse;
     overflow: auto;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 10px;
   }
 
@@ -1061,6 +1015,8 @@ footer {
 }
 
 .pagination_Container {
+  display: flex;
+  justify-content: center;
   position: sticky;
   bottom: 0;
   z-index: 999;
@@ -1176,8 +1132,16 @@ footer {
   overflow: hidden;
   transition: all 0.4s ease;
   border: none;
-  height: 100%;
-  min-height: 23rem;
+  /* height: 100%; */
+  min-height: 22rem;
+}
+
+#carsContainer1,
+#carsContainer2,
+#carsContainer3,
+#carsContainer4,
+#carsContainer5 {
+  align-items: center;
 }
 
 .card-body {
@@ -1393,6 +1357,10 @@ footer {
 
 .reasons-dropdown {
   direction: rtl;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .reasons-toggle {
@@ -1405,14 +1373,14 @@ footer {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 5px;
 }
 
 .reasons-list {
   margin-top: 5px;
-  max-height: 0;
-  overflow: hidden;
   transition: all 0.3s ease;
+  flex: 1;
+  min-height: 0px;
 }
 
 .reasons-list.show {
@@ -1436,7 +1404,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  height: 110px;
   overflow-y: auto;
   align-content: flex-start;
 }
@@ -1473,8 +1440,13 @@ footer {
   align-items: center;
   padding: 5px 0;
   flex-wrap: wrap;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #2c3e50;
 }
-
+.contract-value {
+    margin-right: 8px;
+}
 .contract-item:last-child {
   border-bottom: none;
 }
@@ -1614,6 +1586,7 @@ footer {
 .dropdown-value {
   font-weight: 600;
 }
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .chart-info-btn {
@@ -1625,4 +1598,224 @@ footer {
 
 .chart-info-btn:active {
   transform: scale(0.95);
+}
+
+.btn-secondary1 p {
+  min-width: 75px;
+}
+
+/* version 2 for ipad specifications */
+
+.min-h-0 {
+  min-height: 0;
+}
+
+.Page-Wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+}
+
+@media (min-width: 992px) {
+  .Page-Wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  html,
+  body {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  .header {
+    flex-shrink: 0;
+  }
+
+  footer {
+    flex-shrink: 0;
+  }
+
+  .wrapper {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .wrapper .container-fluid,
+  .wrapper .home-section,
+  .wrapper .main-row {
+    height: 100%;
+  }
+
+  .col-lg-10.col-xl-9 .card .card-body {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-carousel-item {
+    display: none;
+    overflow-y: auto;
+  }
+
+  .main-carousel-item.active {
+    display: block;
+  }
+
+  #button-on-mobile {
+    height: 100%;
+    overflow: auto;
+  }
+
+  #button-on-mobile .card-body {
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+
+}
+
+@media (max-width: 992px) {
+
+  .col-lg-10.col-xl-9,
+  .col-lg-10.col-xl-9 .card {
+    flex: 1;
+    /* min-height: 0; */
+    overflow: hidden;
+  }
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1399.9px),
+(min-width: 768px) and (max-height: 900px) {
+  .car-image {
+    height: 80px;
+  }
+
+  #BalanceChart {
+    height: 100%;
+    min-height: 270px;
+  }
+
+    #CarsChart {
+      min-height: 230px !important;
+    }
+  
+    #ContractsChart {
+      min-height: 200px !important;
+    }
+
+}
+@media (min-width: 1399.9px) and (max-height: 700px) {
+  .hidden-data {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1399.9px) {
+  .pagination_Container {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1399.9px),
+(min-width: 768px) and (max-height: 800px) {
+  #BalanceChart {
+    height: 100%;
+    min-height: 270px;
+  }
+
+   #CarsChart {
+      min-height: 230px !important;
+    }
+  
+    #ContractsChart {
+      min-height: 200px !important;
+    }
+
+  .btn-Pages img {
+    width: 35px;
+  }
+
+  .card .card-body {
+    padding: 5px;
+  }
+
+
+  .contract-item {
+    padding: 2px 0px;
+    font-size: 12px;
+  }
+
+  .car-title {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .carFilter {
+    padding: .1rem .75rem .1rem 2.25rem;
+  }
+
+  .fa-angles-left,
+  .fa-angles-right {
+    font-size: 13px;
+  }
+
+  .pricing-row p {
+    margin-bottom: 0;
+  }
+
+  .more-btn {
+    font-size: .8rem;
+    padding: 5px;
+  }
+
+}
+
+@media(max-height:720px) {
+
+   #CarsChart {
+      min-height: 230px !important;
+    }
+  
+    #ContractsChart {
+      min-height: 200px !important;
+    }
+  .car-image {
+    height: 80px;
+  }
+
+  .car-card {
+    height: 100%;
+    min-height: auto;
+  }
+
+  #carsContainer1,
+  #carsContainer2,
+  #carsContainer3,
+  #carsContainer4,
+  #carsContainer5 {
+    align-items: normal;
+  }
+}
+
+@media (min-width: 991px) and(max-height:670px) {
+  .car-data-row,
+  .Serial-number {
+    display: none;
+  }
+}
+
+@media(max-width:991px) {
+  #cardBody{
+        min-height: 400px;
+  }
 }

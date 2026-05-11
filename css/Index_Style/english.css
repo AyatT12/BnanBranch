@@ -144,12 +144,12 @@ body {
 }
 /*  */
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .buttons-container {
     justify-content: flex-end;
 
   }
-}
+} */
 /* Feed */
 .Feed-textarea {
     text-align: left;
@@ -183,4 +183,29 @@ body {
 .card-info-popup{
   right: auto;
   left: 10px;
+}
+.more-btn{
+  direction: ltr;
+}
+/* marquee */
+.marquee{
+direction: ltr;
+}
+.marquee-xmark {
+    right: auto;
+    left: 5px
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.contract-value {
+    margin-left: 8px;
+    margin-right: 0px;
 }
