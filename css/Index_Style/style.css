@@ -6,6 +6,8 @@ body {
   letter-spacing: 0.28px;
   font-weight: 400;
   height: 100dvh;
+  min-height: -webkit-fill-available; 
+
 }
 
 #content-wrapper {
@@ -1616,6 +1618,8 @@ footer {
   display: flex;
   flex-direction: column;
   height: 100dvh;
+  min-height: -webkit-fill-available; 
+
 }
 
 @media (min-width: 992px) {
@@ -1820,9 +1824,6 @@ footer {
     display: none;
   }
 }
-
-
-
 @media(max-width:991px) {
   #cardBody {
     min-height: 400px;
