@@ -1780,7 +1780,7 @@ footer {
 
 }
 
-@media(max-height:720px) {
+@media(max-height:768px) {
 
   #CarsChart {
     min-height: 230px !important;
