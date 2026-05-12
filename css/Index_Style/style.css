@@ -1444,9 +1444,11 @@ footer {
   font-weight: 600;
   color: #2c3e50;
 }
+
 .contract-value {
-    margin-right: 8px;
+  margin-right: 8px;
 }
+
 .contract-item:last-child {
   border-bottom: none;
 }
@@ -1682,14 +1684,11 @@ footer {
 }
 
 @media (max-width: 992px) {
-
-  .col-lg-10.col-xl-9,
-  .col-lg-10.col-xl-9 .card {
-    flex: 1;
-    /* min-height: 0; */
-    overflow: hidden;
-  }
-
+    .col-lg-10.col-xl-9, .col-lg-10.col-xl-9 .card:not(.car-card) {
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+    }
 }
 
 
@@ -1705,15 +1704,16 @@ footer {
     min-height: 270px;
   }
 
-    #CarsChart {
-      min-height: 230px !important;
-    }
-  
-    #ContractsChart {
-      min-height: 200px !important;
-    }
+  #CarsChart {
+    min-height: 230px !important;
+  }
+
+  #ContractsChart {
+    min-height: 200px !important;
+  }
 
 }
+
 @media (min-width: 1399.9px) and (max-height: 700px) {
   .hidden-data {
     display: none;
@@ -1733,13 +1733,13 @@ footer {
     min-height: 270px;
   }
 
-   #CarsChart {
-      min-height: 230px !important;
-    }
-  
-    #ContractsChart {
-      min-height: 200px !important;
-    }
+  #CarsChart {
+    min-height: 230px !important;
+  }
+
+  #ContractsChart {
+    min-height: 200px !important;
+  }
 
   .btn-Pages img {
     width: 35px;
@@ -1782,13 +1782,14 @@ footer {
 
 @media(max-height:720px) {
 
-   #CarsChart {
-      min-height: 230px !important;
-    }
-  
-    #ContractsChart {
-      min-height: 200px !important;
-    }
+  #CarsChart {
+    min-height: 230px !important;
+  }
+
+  #ContractsChart {
+    min-height: 200px !important;
+  }
+
   .car-image {
     height: 80px;
   }
@@ -1807,7 +1808,7 @@ footer {
   }
 }
 
-@media (min-width: 991px) and(max-height:670px) {
+@media (min-width: 991px) and (max-height:670px) {
   .car-data-row,
   .Serial-number {
     display: none;
@@ -1815,14 +1816,14 @@ footer {
 }
 
 @media(max-width:991px) {
-  #cardBody{
-        min-height: 400px;
+  #cardBody {
+    min-height: 400px;
   }
 }
 
-/* .contract-section{
+.contract-section {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-} */
+}
