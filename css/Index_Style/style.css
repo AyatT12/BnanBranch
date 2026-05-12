@@ -1832,8 +1832,3 @@ footer {
   max-height: 80px; 
   overflow-y: auto;
 }
-
-.car-card .card-body{
-  display: flex;
-  flex-direction: column;
-}
