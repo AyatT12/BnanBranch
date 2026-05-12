@@ -1808,12 +1808,20 @@ footer {
   }
 }
 
+@media (min-width: 1400px) and (max-height:720px) {
+  .car-data-row,
+  .Serial-number {
+    display: none;
+  }
+}
 @media (min-width: 991px) and (max-height:670px) {
   .car-data-row,
   .Serial-number {
     display: none;
   }
 }
+
+
 
 @media(max-width:991px) {
   #cardBody {
@@ -1832,3 +1840,4 @@ footer {
   max-height: 80px; 
   overflow-y: auto;
 }
+
