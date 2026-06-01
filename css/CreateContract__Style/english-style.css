@@ -259,3 +259,18 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 #carDetailsModal .modal-content{
     direction: ltr;
 }
+.Undo-Redo-Container{
+    direction: ltr;
+}
+.js-error{
+    text-align: left;
+}
+#carsContainer {
+    direction: ltr;
+}
+.Available_Car_Card{
+    direction: rtl;
+}
+.moreBtnDiv{
+    text-align: right;
+}
