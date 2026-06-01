@@ -2641,11 +2641,14 @@ fieldset {
 
     .more-btn {
         font-size: .8rem;
-        padding: 5px;
+        padding: 0px 5px;
     }
      
 }
 @media(max-height:768px) {
+    .form-card{
+        padding: 14px;
+    }
     .car-image {
         height: 70px;
     }
