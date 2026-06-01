@@ -1911,7 +1911,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: flex;
     align-items: center;
     border: none;
-    min-height: 22rem;
+    min-height: 19.5rem;
 }
 
 .card-body {
@@ -2137,7 +2137,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: flex;
     align-items: center;
     gap: 5px;
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 8px;
     flex-wrap: wrap;
     justify-content: center;
@@ -2643,35 +2643,46 @@ fieldset {
         font-size: .8rem;
         padding: 5px;
     }
-
+     
 }
-
 @media(max-height:768px) {
-
-    #ContractsChart,
-    #CarsChart {
-        min-height: 230px;
+    .car-image {
+        height: 70px;
     }
 
-    .car-image {
-        height: 80px;
+    #carsContainer {
+        align-items: normal;
     }
 
     .car-card {
         height: 100%;
         min-height: auto;
     }
+}
+@media (min-width: 1400px) and (max-height:700px) {
+  .car-data-row,
+  .Serial-number {
+    display: none;
+  }
+}
 
-    #carsContainer1,
-    #carsContainer2,
-    #carsContainer3,
-    #carsContainer4,
-    #carsContainer5 {
-        align-items: normal;
-    }
+@media (min-width: 991px) and (max-height:625px) {
+  .car-data-row,
+  .Serial-number {
+    display: none;
+  }
+}
 
-    .car-data-row,
-    .Serial-number {
-        display: none;
-    }
+#carsContainer {
+    direction: rtl;
+}
+
+.Available_Car_Card {
+    direction: ltr;
+}
+.more-btn{
+    direction: ltr;
+}
+.moreBtnDiv{
+    text-align: left;
 }
