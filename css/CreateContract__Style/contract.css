@@ -1281,21 +1281,11 @@ input[type=checkbox] {
     justify-content: center;
     align-items: center;
 }
-
-.Avaliable-car-icondata {
-    width: 20px;
-}
-
-.extra-details {
-    box-shadow: 0px 2px 4px 0px #39629C3D;
-    border-radius: 8px;
-    cursor: pointer;
+.ID-upload-container img {
+    max-height: 100%;
 }
 
 /* /// */
-.extra-details-row {
-    position: relative;
-}
 
 .dropdown-content-row {
     flex-direction: row-reverse;
@@ -1419,7 +1409,7 @@ input[type=checkbox] {
     border: 2px solid #faa64d;
     border-radius: 8px;
     font-size: .875rem;
-
+    text-align: right;
 
 }
 

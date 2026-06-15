@@ -79,7 +79,6 @@ textarea {
 }
 
 .hidden-input-row {
-    height: 20vh;
     overflow-y: auto;
     direction: rtl;
     text-align: start;
@@ -100,6 +99,7 @@ textarea {
 
 .inputs-style {
     direction: ltr;
+    text-align: start;
 }
 
 .car-catogeries {
