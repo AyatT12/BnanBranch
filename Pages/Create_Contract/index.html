@@ -81,7 +81,7 @@
         /* /////////////////////////////////////// */
         .autocomplete-items {
             display: none;
-            position: absolute;
+            position: fixed;
             border: 1px solid #ced4da;
             z-index: 9999;
             background-color: #fff;
@@ -91,11 +91,11 @@
             width: auto;
             max-width: fit-content;
             min-width: 150px;
-            left: -10000px;
+            left: -1000px;
         }
     
         .autocomplete-arrow {
-            position: absolute;
+            position: fixed;
             z-index: 10000;
             pointer-events: none;
             display: none;
@@ -3016,9 +3016,7 @@
                                                         </div>
                                                         <div class="col-md-6 col-lg-4" id="External-delegation-container">
                                                             <div class="row flex-row-reverse align-items-start gx-2">
-                                                                <div class="col-auto centered-input-label">
-                                                                    <label for="country">الدولة</label>
-                                                                </div>
+
                                                                 <div class="col col-md-7 DaysNoFixPaddin">
                                                                     <input type="text" class="form-control inputs-style" id="country" name="country" autocomplete="off">
                                                                     <div id="autocomplete-country" class="autocomplete-items"></div>
@@ -3987,18 +3985,21 @@
                     const viewportWidth = window.innerWidth;
                     const visibleItems = autocompleteList.find('div').toArray().map(div => div.textContent);
                     const calculatedWidth = getMaxItemWidth(visibleItems);
+                    const realWidth = autocompleteList[0].getBoundingClientRect().width;
                     autocompleteList.css('width', calculatedWidth + 'px');
-
-                      let leftPosition;
-                        if (isRTL) {
-                            leftPosition = inputRect.left - (calculatedWidth - 230);
-                            if (leftPosition < 10) leftPosition = 10;
-                        } else {
-                            leftPosition = inputRect.right - (calculatedWidth - 230);
-                            if (leftPosition + calculatedWidth > viewportWidth - 10) {
-                                leftPosition = viewportWidth - calculatedWidth - 10;
+                    const inputWidth = inputRect.width;
+        
+                    let leftPosition;
+                    if (isRTL) {
+                                leftPosition = inputRect.right - (inputWidth + realWidth);
+                               if (leftPosition < 10) leftPosition = 10;
+                            } else {
+                                leftPosition = inputRect.right;
+                                if (leftPosition < 10) leftPosition = 10;
+                                if (leftPosition + inputWidth > viewportWidth - 10) {
+                                    leftPosition = viewportWidth - inputWidth - 10;
+                                }
                             }
-                        }
 
                     const dataContainer = $input.closest('.form-card')[0] || document.body;
                     const containerRect = dataContainer.getBoundingClientRect();
