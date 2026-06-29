@@ -197,7 +197,7 @@ function setImageRowHeight() {
         const buffer = 30;
         const availableHeight = parentHeight - otherElementsHeight - buffer - 50;
         if (availableHeight > 50 || attempts >= maxAttempts) {
-            imagesRow.style.height = `${Math.max(availableHeight, 250)}px`;
+            imagesRow.style.height = `${Math.max(availableHeight, 150)}px`;
             return true;
         }
         return false;
@@ -214,12 +214,29 @@ function setImageRowHeight() {
     
     tryMeasure();
 }
+function initHeightObserver() {
+    const virtualCheckData = document.querySelector('.virtual-check-data');
+    if (!virtualCheckData) return;
 
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(setImageRowHeight, 100);
-    setTimeout(setImageRowHeight, 500);
-    setTimeout(setImageRowHeight, 1000);
-});
+    let settled = false;
+
+    const observer = new ResizeObserver((entries) => {
+        for (const entry of entries) {
+            if (entry.contentRect.height > 0) {
+                setImageRowHeight();
+                if (!settled) {
+                    settled = true;
+                    setTimeout(() => observer.disconnect(), 1000);
+                }
+            }
+        }
+    });
+
+    observer.observe(virtualCheckData);
+}
+
+document.addEventListener('DOMContentLoaded', initHeightObserver);
+
 
 window.addEventListener('resize', function() {
     setTimeout(setImageRowHeight, 50);
