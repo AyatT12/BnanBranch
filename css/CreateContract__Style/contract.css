@@ -1615,8 +1615,16 @@ input[type=checkbox] {
     color: #FF992E;
     border: 2px solid #FF992E;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
 }
-
+@media (min-width: 1200px) {
+    .TechnicalCheckup-modalDialog {
+        --bs-modal-width: 950px !important;
+    }
+}
 .TechnicalCheckUp-Btn:hover {
     background-color: #FF992E;
     color: white;
