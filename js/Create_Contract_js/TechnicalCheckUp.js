@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
 
     // إضافة صورة الفحص الفني كخلفية لل كانفاس
     const carBackground = new Image();
-    carBackground.src = '../../images/common/Static/car shape2.svg';
+    carBackground.src = '../../images/common/Static/car shape.svg';
     carBackground.onload = function () {
         ctx.drawImage(carBackground, 0, 0, shapeCanvas.width, shapeCanvas.height);
     };
@@ -143,7 +143,7 @@ function redrawShapes() {
     ctx.clearRect(0, 0, shapeCanvas.width, shapeCanvas.height);
 
     const carBackground = new Image();
-    carBackground.src = '../../images/common/Static/car shape2.svg';
+    carBackground.src = '../../images/common/Static/car shape.svg';
     carBackground.onload = function () {
         ctx.drawImage(carBackground, 0, 0, shapeCanvas.width, shapeCanvas.height);
 
