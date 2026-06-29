@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
 
     // إضافة صورة الفحص الفني كخلفية لل كانفاس
     const carBackground = new Image();
-    carBackground.src = '../../images/common/Static/car shape.svg';
+    carBackground.src = '../../images/common/Static/TechnicalCheckup/car shape.svg';
     carBackground.onload = function () {
         ctx.drawImage(carBackground, 0, 0, shapeCanvas.width, shapeCanvas.height);
     };
@@ -24,16 +24,16 @@ window.addEventListener('load', function () {
 
 // عرض صور انواع الخدوش 
 const BendInBody = new Image();
-BendInBody.src = '../../images/common/Static/bend-in-body.svg';
+BendInBody.src = '../../images/common/Static/TechnicalCheckup/bend-in-body.svg';
 
 const VeryDeepScratch = new Image();
-VeryDeepScratch.src = '../../images/common/Static/very-deep-scratch.svg';
+VeryDeepScratch.src = '../../images/common/Static/TechnicalCheckup/very-deep-scratch.svg';
 
 const DeepScratch = new Image();
-DeepScratch.src = '../../images/common/Static/deep-scratch.svg';
+DeepScratch.src = '../../images/common/Static/TechnicalCheckup/deep-scratch.svg';
 
 const SmallScratch = new Image();
-SmallScratch.src = '../../images/common/Static/small-scratch.svg';
+SmallScratch.src = '../../images/common/Static/TechnicalCheckup/small-scratch.svg';
 
 // متغير لحفظ نوع الخدش الذي تم اختياره
 let selectedShape = null;
@@ -143,7 +143,7 @@ function redrawShapes() {
     ctx.clearRect(0, 0, shapeCanvas.width, shapeCanvas.height);
 
     const carBackground = new Image();
-    carBackground.src = '../../images/common/Static/car shape.svg';
+    carBackground.src = '../../images/common/Static/TechnicalCheckup/car shape.svg';
     carBackground.onload = function () {
         ctx.drawImage(carBackground, 0, 0, shapeCanvas.width, shapeCanvas.height);
 
