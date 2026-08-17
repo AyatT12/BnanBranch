@@ -274,3 +274,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .moreBtnDiv{
     text-align: right;
 }
+/****************Add Notes New style virtual check up********************************************************************************************************************************************************************** */
+.note-corner{
+    top: 0;
+    right: 0;
+    transform: rotate(91deg);
+}
+.note-popover{
+    text-align: left;
+    direction: ltr;
+}
+.add-note-icon {
+    top: 0;
+    right: 0;
+    left: auto;
+}
+.table-bordered td {
+    border-left: 0;
+    border-right: 1px solid #ff9626a3;
+}
