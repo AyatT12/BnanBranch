@@ -91,8 +91,8 @@ nav {
 
 .form-select-last {
     /* border-top: none; */
-    text-align: right;
-    width: 100%;
+    /* text-align: right;
+    width: 100%; */
 
 }
 
@@ -1845,12 +1845,6 @@ box-shadow: none !important;
     vertical-align: middle;
 }
 
-.check-table-notes {
-    resize: none;
-    min-height: 30px;
-    height: 30px !important;
-}
-
 
 #tableContainer {
     overflow-y: auto;
@@ -2375,9 +2369,7 @@ input[type=checkbox] {
 }
 
 .OTP {
-    width: 0.8599999999999999em;
     margin: 0.1em;
-    font-size: 2.0em;
     text-align: center;
     appearance: textfield;
     -webkit-appearance: textfield;
@@ -2386,6 +2378,9 @@ input[type=checkbox] {
     background-color: #F7F7F7;
     border-radius: 6px;
     border-bottom: 2px solid #39629C;
+    height: 50px;
+    width: 25px;
+    font-size: 22px;
 }
 
 input::-webkit-outer-spin-button,
@@ -2708,7 +2703,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .custom-img-btn {
     border: none;
-    background: none;
+    background: transparent;
 }
 
 .sinature-Btn-Card {
@@ -3282,5 +3277,159 @@ fieldset {
 
     .scroll-table-div {
         padding: 0;
+    }
+}
+/* settelment Closure warning */
+#ClosureWarning{
+    direction: rtl;
+}
+.btn-modal-Save {
+  width: 100%;
+  background-color: #FF9626;
+  border: 2px solid #FF9626;
+  color: white;
+}
+
+.btn-Cancel {
+  width: 100%;
+  border: 2px solid #FF9626;
+  background-color: white;
+  color: #FF9626;
+}
+
+.btn-Cancel:hover {
+  background-color: #FFB666;
+  color: white;
+}
+
+.btn-modal-Save:hover {
+  background-color: #FF9626;
+  border: 2px solid #FF9626;
+  color: white;
+}
+/****************Add Notes New style virtual check up********************************************************************************************************************************************************************** */
+.table th {
+    z-index: 9999;
+}
+.modal-title {
+    color: #FF9626;
+    text-shadow: 1px 4px 4px rgb(187 187 187 / 68%);
+    font-size: 1.2rem;
+    letter-spacing: 0.32px;
+    text-align: center;
+}
+.Checkup-table .form-select {
+    height: 31px
+}
+
+.Checkup-table .form-select:focus {
+    border: 1px solid #facd9c !important;
+
+}
+
+.note-td {
+    position: relative;
+}
+
+.add-note-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0px 4px;
+}
+
+.note-cell {
+    cursor: pointer;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.note-cell.has-note {
+    display: none;
+}
+
+.note-cell:hover {
+    color: #faa64d;
+}
+
+.note-corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    display: none;
+    z-index: 5;
+}
+
+.note-corner.has-note {
+    display: block;
+}
+
+.note-corner.has-note::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 0;
+    border-color: #d31d1d transparent transparent transparent;
+    filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, .3));
+}
+
+.note-popover {
+    position: absolute;
+    z-index: 50;
+    min-width: 200px;
+    max-width: 260px;
+    background: #fffbe0;
+    border: 1px solid #e0c840;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 2px;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    display: none;
+    text-align: right;
+    direction: rtl;
+}
+
+.note-popover.show {
+    display: block;
+}
+
+.note-popover .note-edit-link {
+    display: block;
+    margin-top: 6px;
+    font-size: 12px;
+    color: #0d6efd;
+    cursor: pointer;
+}
+
+#noteModal textarea {
+    min-height: 60px !important;
+}
+.check-table-notes{
+    font-size: 1rem;
+}
+.row-label {
+    font-weight: 600;
+}
+#noteModal .modal-body{
+direction: rtl;
+}
+@media (max-width:991px) {
+    .virtual-check-data {
+        min-height: auto;
+    }
+}
+
+@media (min-width:992px) {
+    .virtual-check-table {
+        max-width: 450px;
     }
 }

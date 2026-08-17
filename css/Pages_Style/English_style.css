@@ -111,9 +111,9 @@ textarea{
     }
 }
 
-.button-row {
+/* .button-row {
     padding-right: 34px;
-}
+} */
 
 .form-outline .fa-search {
     
@@ -177,9 +177,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
      height: 35px;
 }
 
-.form-select-last {
+/* .form-select-last {
     text-align: end;
-}
+} */
 .date-col {
     padding-left:0px ;
     padding-right: 5px;
@@ -220,4 +220,30 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 .select-style{
     background-position:right .75rem center;
+}
+/* settelment Closure warning */
+#ClosureWarning{
+    direction: ltr;
+}
+/****************Add Notes New style virtual check up********************************************************************************************************************************************************************** */
+.note-corner{
+    top: 0;
+    right: 0;
+    transform: rotate(91deg);
+}
+.note-popover{
+    text-align: left;
+    direction: ltr;
+}
+.add-note-icon {
+    top: 0;
+    right: 0;
+    left: auto;
+}
+.table-bordered td {
+    border-left: 0;
+    border-right: 1px solid #ff9626a3;
+}
+#handoverNoteContainer{
+    text-align: left;
 }
