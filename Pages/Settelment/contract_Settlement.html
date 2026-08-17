@@ -7,179 +7,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>تسوية العقد</title>
     <link rel="icon" href="../../images/common/Demo/DefualtCompany Logo.png">
-    <link href="../../css/Common_Style/NavBar.css" rel="stylesheet">
     <link href="../../css/Common_Style/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../css/Common_Style/NavBar.css" rel="stylesheet">
+    <link href="../../css/Pages_Style/loader.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css?family=Cairo:500,400,700" rel="stylesheet">
-    <link href="../../css/Pages_Style/style.css" rel="styleSheet">
-    <link href="../../css/Pages_Style/loader.css" rel="styleSheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.min.css' />
+    <link href="../../css/Pages_Style/style.css" rel="styleSheet">
     <!-- <link href="../../css/Pages_Style/English_style.css" rel="styleSheet"> -->
 
 </head>
 
-
 <body>
     <div id="content-wrapper">
-         <header class="header">
+        <header class="header">
             <div class="navbar-area">
-            <!-- Topbar -->
-            <nav class="navbar navbar-expand navbar-light topbar mb-1 Static-top  justify-content-between"
-                style="min-height:100px">
-                <!-- Topbar Navbar -->
-                <ul class="navbar-nav p-0">
-                    <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow position-relative">
-                        <a class="nav-link dropdown-toggle  gap-2" href="#" id="userDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="img-profile rounded-circle" src="../../images/common/Demo/Employee_Picture.svg">
-                            <div class="userName" style="display: flex; flex-direction: column;">
-                                <span class=" text-dark font-weight-bold">
-                                    عيسى هاني مبروك عزام
-                                </span>
-                                <span class="text-dark">
-                                    مشرف على الفروع
-                                </span>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-left  animated--grow-in "
-                            style="font-size: 14px; width: 200px;" aria-labelledby="userDropdown">
-                            <!-- item-->
-                             <a class="dropdown-item notify-item" href="../Account/index.html" >
-                                <img src="../../images/common/Static/AccountNavIcon.svg"  />
-                                <span>حسابى</span>
-                            </a>
-                           <a class="dropdown-item notify-item" data-bs-toggle="modal" data-bs-target="#PassWordModal">
-                                <img src="../../images/common/Static/PasswordNavIcon.svg" />
-                                <span>تغيير كلمة السر</span>
-                            </a>
-                             <a class="dropdown-item notify-item" href="https://ayatt12.github.io/login_v2/Systems.html">
-                                <img src="../../images/common/Static/SystemsNavIcon.svg" />
-                                <span>الانظمة</span>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <!-- item-->
-                            <a class="dropdown-item notify-item" href="https://ayatt12.github.io/login_v2/index.html">
-                                <img src="../../images/common/Static/LogoutNavIcon.svg" />
-                                <span>تسجيل الخروج</span>
-                            </a>
-                        </div>
-                    </li>
-                    <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-2">
-                        <a class="nav-link dropdown-toggle p-0" href="#" id="alertsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="dripicons-bell noti-icon d-flex "
-                                style="font-size: 22px;vertical-align: middle;line-height: 70px;color: #7a7272;"></i>
-                            <!-- Counter - Alerts -->
-                            <span class="noti-icon-badge"></span>
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-left shadow animated--grow-in"
-                            aria-labelledby="alertsDropdown">
-                            <div class="row alert">
-                                <div class="col-6" style="text-align:end;">
-                                    الاشعارات
-                                </div>
-
-                                <div class="col-3">
-                                    علي وشك
-                                </div>
-                                <div class="col-3">
-                                    <span class="d-block">
-                                        منتهي
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light topbar mb-1 Static-top  justify-content-between"
+                    style="min-height:100px">
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav p-0">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow position-relative">
+                            <a class="nav-link dropdown-toggle  gap-2" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="img-profile rounded-circle"
+                                    src="../../images/common/Demo/Employee_Picture.svg">
+                                <div class="userName" style="display: flex; flex-direction: column;">
+                                    <span class=" text-dark font-weight-bold">
+                                        عيسى هاني مبروك عزام
                                     </span>
-                                    <span>
-                                        (لم يسجل)
+                                    <span class="text-dark">
+                                        مشرف على الفروع
                                     </span>
                                 </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-left  animated--grow-in "
+                                style="font-size: 14px; width: 200px;" aria-labelledby="userDropdown">
+                                <!-- item-->
+                                <a class="dropdown-item notify-item" href="../Account/index.html">
+                                    <img src="../../images/common/Static/NavBar/AccountNavIcon.svg" />
+                                    <span>حسابى</span>
+                                </a>
+                                <a class="dropdown-item notify-item" data-bs-toggle="modal"
+                                    data-bs-target="#PassWordModal">
+                                    <img src="../../images/common/Static/NavBar/PasswordNavIcon.svg" />
+                                    <span>تغيير كلمة السر</span>
+                                </a>
+                                <a class="dropdown-item notify-item"
+                                    href="https://ayatt12.github.io/login_v2/Systems.html">
+                                    <img src="../../images/common/Static/NavBar/SystemsNavIcon.svg" />
+                                    <span>الانظمة</span>
+                                </a>
+                                <hr class="dropdown-divider">
+                                <!-- item-->
+                                <a class="dropdown-item notify-item"
+                                    href="https://ayatt12.github.io/login_v2/index.html">
+                                    <img src="../../images/common/Static/NavBar/LogoutNavIcon.svg" />
+                                    <span>تسجيل الخروج</span>
+                                </a>
                             </div>
-                            <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    مستندات الفرع
-                                </div>
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    1
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    0
-                                </div>
+                        </li>
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-2">
+                            <a class="nav-link dropdown-toggle p-0" href="#" id="alertsDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="dripicons-bell noti-icon d-flex "
+                                    style="font-size: 22px;vertical-align: middle;line-height: 70px;color: #7a7272;"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="noti-icon-badge"></span>
                             </a>
-                            <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    وثائق السيارة
-                                </div>
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    0
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    4
-                                </div>
-                            </a>
-                            <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    صيانة السيارة
-                                </div>
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    0
-                                </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    5
-                                </div>
-                            </a>
-                            <a class="dropdown-item dropdown-item-custom ">
-                                <div class="col-md-6 p-0" style="text-align:end;">
-                                    اسعار السيارات
-                                </div>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-left shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <div class="row alert">
+                                    <div class="col-auto" style="text-align:end;">
+                                        الاشعارات
+                                    </div>
 
-                                <div class="col-md-3 Not-ended-Docs-Num text-center">
-                                    0
+                                    <div class="col-3">
+                                        علي وشك
+                                    </div>
+                                    <div class="col-3">
+                                        <span class="d-block">
+                                            منتهي
+                                        </span>
+                                        <span>
+                                            (لم يسجل)
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="col-md-3 ended-Docs-Num">
-                                    2
-                                </div>
+                                <a class="dropdown-item dropdown-item-custom ">
+                                    <div class="col-md-6 p-0" style="text-align:end;">
+                                        مستندات الفرع
+                                    </div>
+                                    <div class="col-md-3 Not-ended-Docs-Num text-center">
+                                        1
+                                    </div>
+                                    <div class="col-md-3 ended-Docs-Num">
+                                        0
+                                    </div>
+                                </a>
+                                <a class="dropdown-item dropdown-item-custom ">
+                                    <div class="col-md-6 p-0" style="text-align:end;">
+                                        وثائق السيارة
+                                    </div>
+                                    <div class="col-md-3 Not-ended-Docs-Num text-center">
+                                        0
+                                    </div>
+                                    <div class="col-md-3 ended-Docs-Num">
+                                        4
+                                    </div>
+                                </a>
+                                <a class="dropdown-item dropdown-item-custom ">
+                                    <div class="col-md-6 p-0" style="text-align:end;">
+                                        صيانة السيارة
+                                    </div>
+                                    <div class="col-md-3 Not-ended-Docs-Num text-center">
+                                        0
+                                    </div>
+                                    <div class="col-md-3 ended-Docs-Num">
+                                        5
+                                    </div>
+                                </a>
+                                <a class="dropdown-item dropdown-item-custom ">
+                                    <div class="col-md-6 p-0" style="text-align:end;">
+                                        اسعار السيارات
+                                    </div>
+
+                                    <div class="col-md-3 Not-ended-Docs-Num text-center">
+                                        0
+                                    </div>
+                                    <div class="col-md-3 ended-Docs-Num">
+                                        2
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- Nav Item - Language -->
+                        <li class="nav-item dropdown no-arrow mx-2 ">
+                            <a class="nav-link dropdown-toggle p-0" role="button" href="#">
+                                <h5 style="color: #272524;">En</h5>
                             </a>
+                        </li>
+                    </ul>
+                    <!-- warning messages -->
+                    <div class="warning-section" id="warningSection">
+                        <div class="marquee">
+                            <div class="marquee-content">
+                                <p> خدمة الرسائل النصية غير متاحة حالياً</p>
+                                <p> خدمة الرسائل النصية غير متاحة حالياً</p>
+                                <p> خدمة الرسائل النصية غير متاحة حالياً</p>
+
+                            </div>
                         </div>
-                    </li>
-                    <!-- Nav Item - Language -->
-                    <li class="nav-item dropdown no-arrow mx-2 ">
-                        <a class="nav-link dropdown-toggle p-0" role="button" href="#">
-                            <h5 style="color: #272524;">En</h5>
+                        <i class="fa-regular fa-circle-xmark marquee-xmark" id="marquee-xmark"
+                            onclick="closeWarning()"></i>
+                    </div>
+
+                    <!-- logo -->
+                    <div class="d-flex align-items-center on-mobile gap-1 gap-md-3">
+                        <div class="">
+                            <h1 class="hide-on-mobile" style="font-size: 1.2rem;font-weight: bold;">شركة كدي لتأجير
+                                السيارات
+                            </h1>
+                            <div class="Name_status">
+                                <span class="extra-small-mobile m-0"> الرئيسي </span> <span
+                                    class="BranchStatus">موقوف</span>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <img class="extra-small-mobile Logo "
+                                src="../../images/common/Demo/DefualtCompany Logo.png">
                         </a>
-                    </li>
-                </ul>
-                <!-- warning messages -->
-                <div class="warning-section" id="warningSection">
-                    <div class="marquee">
-                        <div class="marquee-content">
-                            <p> خدمة الرسائل النصية غير متاحة حالياً</p>
-                            <p> خدمة الرسائل النصية غير متاحة حالياً</p>
-                            <p> خدمة الرسائل النصية غير متاحة حالياً</p>
-
-                        </div>
                     </div>
-                    <i class="fa-regular fa-circle-xmark marquee-xmark" id="marquee-xmark" onclick="closeWarning()"></i>
-                </div>
-
-                <!-- logo -->
-                <div class="d-flex align-items-center on-mobile gap-1 gap-md-3">
-                    <div class="">
-                        <h1 class="hide-on-mobile" style="font-size: 1.2rem;font-weight: bold;">شركة كدي لتأجير السيارات
-                        </h1>
-                        <div class="Name_status">
-                            <span class="extra-small-mobile m-0"> الرئيسي </span> <span
-                                class="BranchStatus">موقوف</span>
-                        </div>
-                    </div>
-                    <a href="#">
-                        <img class="extra-small-mobile Logo " src="../../images/common/Demo/DefualtCompany Logo.png">
-                    </a>
-                </div>
-            </nav>
-        </div>
+                </nav>
+            </div>
         </header>
         <main class="main-container container-fluid">
             <div class="row justify-content-center w-100 h-100" style="flex: 1;">
@@ -189,12 +193,13 @@
                             <div class="row pt-2 align-items-center">
                                 <div class="col-auto d-flex gap-3">
                                     <a href="../../index.html" style="width: fit-content;">
-                                        <div> <img src="../../images/common/Static/Close.svg" alt="close_icon" class="close-icon">
+                                        <div> <img src="../../images/common/Static/Close.svg" alt="close_icon"
+                                                class="close-icon">
                                         </div>
                                     </a>
-                                    <a href="index.html"
-                                        style="width: fit-content;">
-                                        <div> <img src="../../images/common/Static/Arrow_Left.svg" alt="close_icon" class="close-icon">
+                                    <a href="index.html" style="width: fit-content;">
+                                        <div> <img src="../../images/common/Static/Arrow_Left.svg" alt="close_icon"
+                                                class="close-icon">
                                         </div>
                                     </a>
                                 </div>
@@ -220,13 +225,16 @@
                                             <div class="form-card SettlementCard1  ">
                                                 <div class="pdfs_Container d-flex mb-3 gap-3">
                                                     <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                        target="_blank" class="pdf-anchor"><img src="../../images/common/Static/contract.svg"
+                                                        target="_blank" class="pdf-anchor"><img
+                                                            src="../../images/common/Static/pdf_icons/contract.svg"
                                                             alt="pdf for contract details" class="pdf_img2"></a>
                                                     <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                        target="_blank" class="pdf-anchor2"><img src="../../images/common/Static/Invoice.svg"
+                                                        target="_blank" class="pdf-anchor2"><img
+                                                            src="../../images/common/Static/pdf_icons/Invoice.svg"
                                                             alt="pdf for contract details" class="pdf_img"></a>
                                                     <a href="https://drive.google.com/file/d/1q2Mb1uLGjLIvRphej_9X4zHhc9OuCcyB/view"
-                                                        target="_blank" class="pdf-anchor3"><img src="../../images/common/Static/naql.svg"
+                                                        target="_blank" class="pdf-anchor3"><img
+                                                            src="../../images/common/Static/pdf_icons/naql.svg"
                                                             alt="pdf for contract details" class="pdf_img3"></a>
                                                 </div>
                                                 <div class="row flex-row-reverse align-items-start" style="flex: 1;">
@@ -247,66 +255,66 @@
                                                                 <div class="dropdown-content dropdown-content-extension"
                                                                     id="dropdown-content-Settlement">
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : المستأجر </p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>عبدالمنعم عبدالحليم هشام الريس</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : السيارة</p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p> ى ر ر 8343 </p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : بداية العقد </p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>2024/12/29 18:12</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : نهاية العقد المتوقعة </p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>2025/02/12 18:12</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : عدد الأيام المتوقعة</p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>3</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : الساعات المجانية </p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>2</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : الحد الأعلى للساعات</p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>0</p>
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : الكيلوات المجاني اليومي</p>
                                                                         </div>
-                                                                        <div class="col-6 personal-data">
+                                                                        <div class="col-auto personal-data">
                                                                             <p>2</p>
                                                                         </div>
                                                                     </div>
@@ -332,7 +340,7 @@
                                                                 <div class="dropdown-content  dropdown-content-extension"
                                                                     id="dropdown-content-Settlement2">
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p> ايجار </p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -340,7 +348,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>خيارات</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -349,7 +357,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>اضافات </p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -358,7 +366,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>رسوم التفويض</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -368,7 +376,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>رسوم شموس</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -377,7 +385,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>رسوم حكومية</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -386,7 +394,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>رسوم إدارية</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -395,7 +403,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>رسوم أخرى</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -404,7 +412,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>ضريبة</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -525,7 +533,8 @@
                                             </div>
                                             <div class="row button-row">
                                                 <div class="col-auto">
-                                                    <img src="../../images/common/Static/NextArrow.png" alt="Button Image" class="next"
+                                                    <img src="../../images/common/Static/NextArrow.png"
+                                                        alt="Button Image" class="next"
                                                         style="vertical-align: middle; ">
                                                     <input type="button" name="next" class="next action-button"
                                                         value="التالي" />
@@ -558,7 +567,7 @@
                                                                         <td>
                                                                             <input type="text"
                                                                                 class="form-control Table-inputs"
-                                                                                name="ChangeOil" value="100.00">
+                                                                                name="ChangeOil">
                                                                         </td>
                                                                         <td>
                                                                             تغيير الزيت
@@ -574,7 +583,7 @@
                                                                         <td>
                                                                             <input type="text"
                                                                                 class="form-control Table-inputs"
-                                                                                name="TiresExpenses" value="75.00">
+                                                                                name="TiresExpenses">
 
                                                                         </td>
                                                                         <td>
@@ -592,7 +601,7 @@
                                                                         <td>
                                                                             <input type="text"
                                                                                 class="form-control Table-inputs"
-                                                                                name="Transportation" value=" 8.50">
+                                                                                name="Transportation">
 
                                                                         </td>
                                                                         <td>
@@ -633,7 +642,7 @@
                                                                     </tr>
                                                                     <tr class="total">
                                                                         <td colspan="2">
-                                                                            <p id="TotalExpenses">183.50</p>
+                                                                            <p id="TotalExpenses"></p>
                                                                         </td>
                                                                         <td scope="row">
                                                                             <p>المجموع</p>
@@ -667,7 +676,7 @@
                                                                                             <divc
                                                                                                 lass="upload-container-checking Expenses-compensation-Upload">
                                                                                                 <img class="upload-icon"
-                                                                                                    src="../../images/common/Static/Add.svg"
+                                                                                                    src="../../images/common/Static/Settelment/Add.svg"
                                                                                                     alt="Upload Icon"
                                                                                                     id="addImage">
                                                                                                 <input type="file"
@@ -695,7 +704,8 @@
                                             </div>
                                             <div class="row button-row">
                                                 <div class="col-auto">
-                                                    <img src="../../images/common/Static/NextArrow.png" alt="Button Image" class="next"
+                                                    <img src="../../images/common/Static/NextArrow.png"
+                                                        alt="Button Image" class="next"
                                                         style="vertical-align: middle; ">
                                                     <input type="button" name="next" class="next action-button"
                                                         value="التالي" />
@@ -703,7 +713,8 @@
                                                 <div class="col-auto">
                                                     <input type="button" name="previous"
                                                         class="previous action-button-previous" value="السابق" />
-                                                    <img src="../../images/common/Static/BackArrow.png" alt="Button Image" class="previous"
+                                                    <img src="../../images/common/Static/BackArrow.png"
+                                                        alt="Button Image" class="previous"
                                                         style="vertical-align: middle; ">
                                                 </div>
                                             </div>
@@ -736,7 +747,7 @@
                                                                         <td>
                                                                             <input type="text"
                                                                                 class="form-control Table-inputs"
-                                                                                name="SpareParts" value="100.00">
+                                                                                name="SpareParts">
                                                                         </td>
                                                                         <td>
                                                                             قطع الغيار
@@ -753,7 +764,7 @@
                                                                         <td>
                                                                             <input type="text"
                                                                                 class="form-control Table-inputs"
-                                                                                name="HandFare" value="75.00">
+                                                                                name="HandFare">
                                                                         </td>
                                                                         <td>
                                                                             أجرة اليد
@@ -770,7 +781,7 @@
                                                                         <td>
                                                                             <input type="text"
                                                                                 class="form-control Table-inputs"
-                                                                                name="Transportation" value="75.00">
+                                                                                name="Transportation">
                                                                         </td>
                                                                         <td>
                                                                             النقل
@@ -845,14 +856,16 @@
                                                                                     <div class="upload__btn-box"
                                                                                         id="compensation-upload-box">
                                                                                         <label class="upload__btn">
-                                                                                            <div class="upload-container-checking Expenses-compensation-Upload">
+                                                                                            <div
+                                                                                                class="upload-container-checking Expenses-compensation-Upload">
                                                                                                 <img class="upload-icon"
-                                                                                                    src="../../images/common/Static/Add.svg"
+                                                                                                    src="../../images/common/Static/Settelment/Add.svg"
                                                                                                     alt="Upload Icon"
                                                                                                     id="addImage">
                                                                                                 <input type="file"
                                                                                                     class="upload__inputfile"
-                                                                                                    id="compensation-images" multiple>
+                                                                                                    id="compensation-images"
+                                                                                                    multiple>
                                                                                             </div>
                                                                                         </label>
                                                                                     </div>
@@ -891,7 +904,8 @@
                                             </div>
                                             <div class="row button-row">
                                                 <div class="col-auto">
-                                                    <img src="../../images/common/Static/NextArrow.png" alt="Button Image" class="next"
+                                                    <img src="../../images/common/Static/NextArrow.png"
+                                                        alt="Button Image" class="next"
                                                         style="vertical-align: middle; ">
                                                     <input type="button" name="next" class="next action-button"
                                                         value="التالي" />
@@ -899,7 +913,8 @@
                                                 <div class="col-auto">
                                                     <input type="button" name="previous"
                                                         class="previous action-button-previous" value="السابق" />
-                                                    <img src="../../images/common/Static/BackArrow.png" alt="Button Image" class="previous"
+                                                    <img src="../../images/common/Static/BackArrow.png"
+                                                        alt="Button Image" class="previous"
                                                         style="vertical-align: middle; ">
                                                 </div>
                                             </div>
@@ -907,7 +922,7 @@
                                         <fieldset id="FourthFieldset">
                                             <div class="form-card">
                                                 <div class="row virtual-check-row">
-                                                    <div class="col-lg-6 d-flex flex-column virtual-check-data">
+                                                    <div class="col d-flex flex-column virtual-check-data">
                                                         <div class="row CurrentReadingg_row flex-row-reverse ">
                                                             <div class="col-md-auto" style="min-width: 300px;">
                                                                 <div class="row flex-row-reverse gx-1">
@@ -973,7 +988,8 @@
                                                                             class="btn check-btn d-flex align-items-center gap-2 TechnicalCheckUp_Btn"
                                                                             data-bs-toggle="modal"
                                                                             href="#TechnicalCheckUp">
-                                                                            <img src="../../images/common/Static/Car_Icon.svg">
+                                                                            <img
+                                                                                src="../../images/common/Static/TechnicalCheckup/Car_Icon.svg">
                                                                             <span
                                                                                 class="TechnicalCheckUp_Btn_Title">الفحص
                                                                                 الفني</span>
@@ -1013,1002 +1029,31 @@
                                                         </div>
 
                                                     </div>
-                                                    <div class="col-lg-6 virtual-check-table mt-xl-0">
-                                                        <div class="table-container-single h-100">
-                                                            <div class="table-scroll">
+                                                    <div class="col-md-12 col-auto virtual-check-table mt-xl-0">
+                                                        <div class="table-container-single">
+                                                            <div class="table-scroll h-100">
                                                                 <table
-                                                                    class="table table-bordered table-hover Checkup-table">
+                                                                    class="table table-bordered table-hover Checkup-table"
+                                                                    id="checkupTable">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="value-tabel-header">الملاحظات
-                                                                            </th>
                                                                             <th>الفحص</th>
                                                                             <th>
-                                                                                <div
-                                                                                    class="d-flex justify-content-center">
-                                                                                    <div class="col"> بنود الفحص</div>
-                                                                                    <div class="col-auto p-0"> <input
+                                                                                <div class="row g-1 d-flex justify-content-end align-items-center"
+                                                                                    style="gap:5px;">
+                                                                                    <div class="col-auto">بنود الفحص
+                                                                                    </div>
+                                                                                    <div class="col-auto p-0"
+                                                                                        style="height:20px;"><input
                                                                                             type="checkbox"
-                                                                                            id="All_Check_items"></div>
+                                                                                            id="All_Check_items">
+                                                                                    </div>
                                                                                 </div>
                                                                             </th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Tires-textarea" maxlength="100"
-                                                                                    name="Tires-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="1">ممتلئ
-                                                                                    </option>
-                                                                                    <option value="2"> 3/4 </option>
-                                                                                    <option value="2"> 1/2 </option>
-                                                                                    <option value="2"> 1/4 </option>
-                                                                                    <option value="2"> فارغ
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Tires" for="Tires">
-                                                                                        الإطارات
-                                                                                    </label>
-                                                                                    <input class="Tires-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Tires" id="Tires">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="lights-textarea" maxlength="100"
-                                                                                    name="lights-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-
-
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="lights" for="lights">
-                                                                                        الأنوار
-
-                                                                                    </label>
-                                                                                    <input class="lights-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="lights" id="lights">
-
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Air_conditioner-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Air_conditioner-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Air_conditioner"
-                                                                                        for="Air_conditioner">
-                                                                                        المكيف
-
-                                                                                    </label>
-                                                                                    <input class="Air_conditioner-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Air_conditioner"
-                                                                                        id="Air_conditioner">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Safety_Security-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Safety_Security-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Safety_Security"
-                                                                                        for="Safety_Security">
-                                                                                        المرايا الداخلية و الخارجية
-
-                                                                                    </label>
-                                                                                    <input class="Safety_Security-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Safety_Security"
-                                                                                        id="Safety_Security">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="wiper-textarea" maxlength="100"
-                                                                                    name="wiper-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="wiper" for="wiper">
-                                                                                        المساحات
-
-                                                                                    </label>
-                                                                                    <input class="wiper-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="wiper" id="wiper">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="signals-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="signals-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="signals"
-                                                                                        for="signals">
-                                                                                        الإشارات
-
-                                                                                    </label>
-                                                                                    <input class="signals-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="signals" id="signals">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="cleanliness-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="cleanliness-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="cleanliness"
-                                                                                        for="cleanliness">
-                                                                                        النظافة
-
-                                                                                    </label>
-                                                                                    <input class="cleanliness-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="cleanliness"
-                                                                                        id="cleanliness">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Front_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Front_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Front_brake "
-                                                                                        for="Front_brake">
-                                                                                        الفرامل الأمامية
-
-                                                                                    </label>
-                                                                                    <input class="Front_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Front_brake"
-                                                                                        id="Front_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        الفرامل الخلفية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        العجلة الإحتياطية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        طفاية الحريق
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        المثلث العاكس
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        المفتاح
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        الانوار
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        إشارات الانعطاف
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        الطاسات و الجنوط
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        حساسات امامية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        حساسات خلفية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        لوحات السيارة
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        كميرات امامية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        كميرات خلفية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        الإسعافات الأولية
-
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td class="text-center">
-                                                                                <textarea
-                                                                                    class="form-control check-table-notes"
-                                                                                    id="Rear_brake-textarea"
-                                                                                    maxlength="100"
-                                                                                    name="Rear_brake-textarea"></textarea>
-                                                                            </td>
-                                                                            <td>
-                                                                                <select
-                                                                                    class="form-select table-select-style"
-                                                                                    aria-label="Default select example">
-                                                                                    <option selected> </option>
-                                                                                    <option value="2"> ممتاز
-                                                                                    </option>
-                                                                                    <option value="2"> جيد </option>
-                                                                                    <option value="2"> ضعيف
-                                                                                    </option>
-                                                                                    <option value="2"> لا يعمل
-                                                                                    </option>
-                                                                                    <option value="2"> موجود
-                                                                                    </option>
-                                                                                    <option value="2"> غير موجود
-                                                                                    </option>
-                                                                                </select>
-                                                                            </td>
-
-                                                                            <td>
-                                                                                <div class="options-col">
-                                                                                    <label class="Rear_brake"
-                                                                                        for="Rear_brake">
-                                                                                        معدات الكفر الإحتياطي
-                                                                                    </label>
-                                                                                    <input class="Rear_brake-input"
-                                                                                        type="checkbox"
-                                                                                        name="Examination-items"
-                                                                                        value="Rear_brake"
-                                                                                        id="Rear_brake">
-                                                                                </div>
-                                                                            </td>
-
-                                                                        </tr>
+                                                                        <!-- rows are generated by js -->
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -2028,7 +1073,8 @@
                                             </div>
                                             <div class="row button-row">
                                                 <div class="col-auto">
-                                                    <img src="../../images/common/Static/NextArrow.png" alt="Button Image" class="next"
+                                                    <img src="../../images/common/Static/NextArrow.png"
+                                                        alt="Button Image" class="next"
                                                         style="vertical-align: middle; ">
                                                     <input type="button" name="next" class="next action-button"
                                                         value="التالي" />
@@ -2036,7 +1082,8 @@
                                                 <div class="col-auto">
                                                     <input type="button" name="previous"
                                                         class="previous action-button-previous" value="السابق" />
-                                                    <img src="../../images/common/Static/BackArrow.png" alt="Button Image" class="previous"
+                                                    <img src="../../images/common/Static/BackArrow.png"
+                                                        alt="Button Image" class="previous"
                                                         style="vertical-align: middle; ">
                                                 </div>
                                             </div>
@@ -2053,13 +1100,14 @@
                                                                 <p class="mb-0">24-1401-4001105-000078</P>
                                                             </div>
                                                             <div class="col-md-auto seacrh-icon-col1">
-                                                                <div> <img src="../../images/common/Static/Search_Icon.svg"
+                                                                <div> <img
+                                                                        src="../../images/common/Static/Search_Icon.svg"
                                                                         alt="seacrh-icon Image"
                                                                         id="contract-value-Settlement3"> </div>
                                                                 <div class="dropdown-content dropdown-content-extension"
                                                                     id="dropdown-content-Settlement3">
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : المستأجر </p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2068,7 +1116,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : السيارة</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2078,7 +1126,7 @@
                                                                     </div>
 
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p>: عدد الايام</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2088,7 +1136,7 @@
                                                                     </div>
 
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : المبلغ المحجوز</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2097,7 +1145,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : نسبة الخصم </p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2106,7 +1154,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : نسبة الضريبة</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2115,7 +1163,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : قيمة الوقود ممتلئ</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2124,7 +1172,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p> : حالة الخزان</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2133,7 +1181,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p>: كيلوات زائدة </p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2142,7 +1190,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p>: قيمة الكيلو الاضافي</p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2151,7 +1199,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-6">
+                                                                        <div class="col-auto">
                                                                             <p>: أيام التأخير </p>
                                                                         </div>
                                                                         <div class="col personal-data">
@@ -2182,46 +1230,24 @@
                                                                 <div class="dropdown-content  dropdown-content-extension"
                                                                     id="dropdown-content-Settlement4">
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
-                                                                            <p>
-                                                                                : ايجار
-                                                                            </p>
+                                                                        <div class="col-auto">
+                                                                            <p>: ايجار </p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
                                                                             <p>4.652.00</p>
                                                                         </div>
-
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>: رسوم التفويض</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
                                                                             <p> 10.00 </p>
 
                                                                         </div>
-
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
-                                                                            <p>: رسوم شموس</p>
-                                                                        </div>
-                                                                        <div class="col-auto personal-data">
-                                                                            <p>1.00</p>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
-                                                                            <p>: رسوم حكومية</p>
-                                                                        </div>
-                                                                        <div class="col-auto personal-data">
-                                                                            <p>0.00</p>
-                                                                        </div>
-
-                                                                    </div>
-                                                                    <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>: رسوم إدارية</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -2230,7 +1256,26 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
+                                                                            <p>: رسوم شموس</p>
+                                                                        </div>
+                                                                        <div class="col-auto personal-data">
+                                                                            <p>1.00</p>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="row dropdown-content-row">
+                                                                        <div class="col-auto">
+                                                                            <p>: رسوم حكومية</p>
+                                                                        </div>
+                                                                        <div class="col-auto personal-data">
+                                                                            <p>0.00</p>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="row dropdown-content-row">
+                                                                        <div class="col-auto">
                                                                             <p>: رسوم أخرى</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -2239,7 +1284,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>: كيلوات زائدة</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -2248,7 +1293,7 @@
 
                                                                     </div>
                                                                     <div class="row dropdown-content-row">
-                                                                        <div class="col-7">
+                                                                        <div class="col-auto">
                                                                             <p>: غرامة التأخير (أيام)</p>
                                                                         </div>
                                                                         <div class="col-auto personal-data">
@@ -2412,14 +1457,30 @@
                                             <div class="row button-row align-items-center">
                                                 <div class="col-auto py-2 px-0  d-flex flex-wrap gap-1">
                                                     <button type="button" class="btn check-btn payment-button"
+                                                        data-bs-toggle="modal" href="#SettelmentModal"
                                                         id="SubmitFormBtn">حفظ
                                                     </button>
-                                                   
+                                                    <button type="button"
+                                                        class="btn check-btn payment-button signature-button"
+                                                        data-bs-toggle="modal" href="#signature-modal"
+                                                        id="signature-Modal-button">
+                                                        <div class="row align-items-center g-1">
+                                                            <div class="col-auto">
+                                                                <div class="systems-check"> <i
+                                                                        class="fa-solid fa-check text-white"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col">
+                                                                توقيع المستأجر
+                                                            </div>
+                                                        </div>
+                                                    </button>
                                                 </div>
                                                 <div class="col-auto">
                                                     <input type="button" name="previous"
                                                         class="previous action-button-previous" value="السابق" />
-                                                    <img src="../../images/common/Static/BackArrow.png" alt="Button Image" class="previous"
+                                                    <img src="../../images/common/Static/BackArrow.png"
+                                                        alt="Button Image" class="previous"
                                                         style="vertical-align: middle;">
                                                 </div>
                                             </div>
@@ -2457,23 +1518,28 @@
                                     <div class="row g-3 justify-content-center " id="TechnicalCheckUp-container">
                                         <div class="col-auto">
                                             <button id="bend-in-body-btn" class="TechnicalCheckUp-Btn p-2"> <img
-                                                    src="../../images/common/Static/bend-in-body.svg"> انحناء في الهيكل
+                                                    src="../../images/common/Static/TechnicalCheckup/bend-in-body.svg">
+                                                انحناء في الهيكل
                                             </button>
                                         </div>
                                         <div class="col-auto">
                                             <button id="very-deep-scratch-btn" class="TechnicalCheckUp-Btn p-2"> <img
-                                                    src="../../images/common/Static/very-deep-scratch.svg"> خدش عميق جدًا
+                                                    src="../../images/common/Static/TechnicalCheckup/very-deep-scratch.svg">
+                                                خدش عميق جدًا
                                             </button>
 
                                         </div>
                                         <div class="col-auto">
                                             <button id="deep-scratch-btn" class="TechnicalCheckUp-Btn p-2"> <img
-                                                    src="../../images/common/Static/deep-scratch.svg"> خدش عميق </button>
+                                                    src="../../images/common/Static/TechnicalCheckup/deep-scratch.svg">
+                                                خدش عميق </button>
 
                                         </div>
                                         <div class="col-auto">
                                             <button id="small-scratch-btn" class="TechnicalCheckUp-Btn p-2">
-                                                <img src="../../images/common/Static/small-scratch.svg"> خدش بسيط </button>
+                                                <img
+                                                    src="../../images/common/Static/TechnicalCheckup/small-scratch.svg">
+                                                خدش بسيط </button>
 
                                         </div>
                                     </div>
@@ -2487,11 +1553,11 @@
                                     <div class="row g-3">
                                         <div class="col d-flex justify-content-center ">
                                             <button id="undo-btn" class=" undo-redo-btn"><img
-                                                    src="../../images/common/Static/undo.svg"></button>
+                                                    src="../../images/common/Static/TechnicalCheckup/undo.svg"></button>
 
 
                                             <button id="redo-btn" class="undo-redo-btn mx-2 "><img
-                                                    src="../../images/common/Static/undo (2).svg"></button>
+                                                    src="../../images/common/Static/TechnicalCheckup/Redo.svg"></button>
 
                                         </div>
                                         <div class="col text-center">
@@ -2528,7 +1594,8 @@
 
                             </div>
                             <div class="col-auto">
-                                <button class="custom-img-button"><img src="../../images/common/Static/Frame 2608797.svg"> موافق</button>
+                                <button class="custom-img-button"><img
+                                        src="../../images/common/Static/Frame 2608797.svg"> موافق</button>
                             </div>
                             <div class="col-md-12 requird-field-row">
                                 <p class="requird-field text-center">الرمز المدخل غير صحيح </p>
@@ -2614,8 +1681,9 @@
             <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
                 <div class="modal-content signature-modal-content p-3">
                     <div class="modal-header p-1 border-0">
-                        <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                     </div>
+                        <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
                     <div class="modal-body Signature-modal-body">
                         <div class="SignatureCard">
                             <div class="Signature-main-container" id="removeSignatureImg"></div>
@@ -2628,14 +1696,15 @@
                         <div class="row">
                             <div class="col-3">
                                 <div class="sinature-Btn-Card p-2">
-                                    <img src="../../images/common/Static/signature/Pic.svg" class="w-100" id="UploadSigntaurePic">
+                                    <img src="../../images/common/Static/signature/Pic.svg" class="w-100"
+                                        id="UploadSigntaurePic">
                                     <input type="file" id="imageUpload" accept="image/*" style="display: none;">
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="sinature-Btn-Card p-2">
-                                    <img src="../../images/common/Static/signature/file-signature_9795523 1.svg" class="w-100"
-                                        id="WriteSignature">
+                                    <img src="../../images/common/Static/signature/file-signature_9795523 1.svg"
+                                        class="w-100" id="WriteSignature">
                                 </div>
                             </div>
                             <div class="col-3">
@@ -2653,14 +1722,75 @@
                 </div>
             </div>
         </div>
-
-        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
-          <div class="LoaderArea" style="display: none;" id="LoaderArea">
-        <div class="spinner-border mb-3">
-              <span class='visually-hidden'>Loading...</span>
+        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% SETTELMENT MODAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+        <div class="modal fade" id="SettelmentModal" tabindex="-1" aria-labelledby="SettelmentModalLabel"
+            data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h1 class="modal-title fs-4 m-auto d-flex align-items-start gap-2" id="Delete-ModalLabel">
+                            تأكيد الاجراء
+                            <img src="../../images/common/Static/Settelment/RedStop.svg" />
+                        </h1>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center" id="ClosureWarning"> سيتم اغلاق العقد خارج نظام تأجير , هل تريد اكمال
+                            العملية ؟ </p>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 text-center">
+                                    <button type="button" class="btn btn-Cancel" data-bs-dismiss="modal">إلغاء
+                                        الأمر</button>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <button type="button" class="btn btn-modal-Save">موافق</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+        <!-- Note Modal -->
+        <div class="modal fade" id="noteModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header pb-2">
+                        <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal"></button>
+                        <h6 class="modal-title" id="noteModalLabel">إضافة ملاحظة</h6>
+                    </div>
+                    <div class="modal-body p-2">
+
+                        <div id="handoverNoteContainer" class="p-2 mb-1"
+                            style="display: none; border-bottom: 1px dashed black;">
+                            <span id="handoverNoteText" class="text-break"></span>
+                        </div>
+                        <textarea class="form-control check-table-notes" id="noteTextarea" maxlength="80"></textarea>
+                        <div class="form-text text-end mt-1"><span id="noteCharCount">0</span>/80</div>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-start">
+                        <button type="button" class="sinature-Btn-Card bg-transparent border-0 p-2" id="saveNoteBtn">
+                            <img src="../../images/common/Static/signature/save.svg" alt="Save">
+                        </button>
+                        <button type="button" class="sinature-Btn-Card bg-transparent border-0 p-2" id="deleteNoteBtn"
+                            style="display:none;">
+                            <img src="../../images/common/Static/delete (2).svg" alt="Delete">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+        <div class="LoaderArea" style="display: none;" id="LoaderArea">
+            <div class="spinner-border mb-3">
+                <span class='visually-hidden'>Loading...</span>
+            </div>
             <p class="text-white">
-             فضلاً أنتظر ......
+                فضلاً أنتظر ......
             </p>
         </div>
     </div>
@@ -2680,8 +1810,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="../../js/Pages_JS/Settelment/Settlement.js"></script>
     <script src="../../js/Pages_JS/Settelment/TechnicalCheckUp.js"></script>
-    <script src="../../js/Pages_JS/Settelment/Loader.js"></script>
-      <script>
+
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <!-- <script src="../../js/Pages_JS/Settelment/Loader.js"></script> -->
+    <script src="../../js/Pages_JS/Settelment/AddNotes.js"></script>
+
+    <script>
         function closeWarning() {
             const warningSection = document.getElementById('warningSection');
             warningSection.style.transform = 'translateY(-100%)';
@@ -2882,47 +2017,6 @@
             });
         });
     </script>
-
-    <!-- سكربت يعمل على جزئية حقول ادخال القيمة في المصروفات و التعويضات -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.querySelectorAll(".Table-inputs").forEach(input => {
-                input.addEventListener("input", function () {
-                    let value = this.value;
-
-                    // السماح فقط بالأرقام والنقطة العشرية
-                    value = value.replace(/[^0-9.]/g, '');
-
-                    // منع وجود أكثر من نقطة عشرية
-                    let parts = value.split('.');
-                    if (parts.length > 2) {
-                        value = parts[0] + '.' + parts.slice(1).join('');
-                    }
-
-                    this.value = value;
-                });
-
-                // التحقق من القيمة و تنسيقها  عند تغيير القيمة
-                function validateAndFormat() {
-                    let num = parseFloat(this.value.replace(/,/g, '')); // تحويل النص إلى رقم
-
-                    // التأكد من أن الرقم  (بين 0 و 1,000,000.00)
-                    if (isNaN(num) || num < 0) {
-                        num = 0;
-                    } else if (num > 1000000) {
-                        num = 1000000;
-                    }
-
-                    // تنسيق الرقم بحيث يحتوي على منزلتين عشريتين
-                    this.value = num.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-                }
-
-                input.addEventListener("blur", validateAndFormat);
-
-                input.addEventListener("change", validateAndFormat);
-            });
-        });
-    </script>
     <!-- check all items in virtual check -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -2937,6 +2031,181 @@
             });
         });
     </script>
+    <!-- ========================================================================================= -->
+    <script>
+
+        (function () {
+            'use strict';
+
+            $(document).ready(function () {
+
+                const TABLE_CONFIG = {
+                    'SecondFieldset': {
+                        tableId: '#Expenses-Data-Table',
+                        name: 'Expenses'
+                    },
+                    'ThirdFieldset': {
+                        tableId: '#compensation-Data-Table',
+                        name: 'Compensation'
+                    }
+                };
+
+                function isSupportedFieldset(fieldset) {
+                    const id = $(fieldset).attr('id');
+                    return id === 'SecondFieldset' || id === 'ThirdFieldset';
+                }
+
+                function getTableId(fieldset) {
+                    const id = $(fieldset).attr('id');
+                    return TABLE_CONFIG[id] ? TABLE_CONFIG[id].tableId : null;
+                }
+
+                function getTableFocusElements(fieldset) {
+                    const fieldsetId = $(fieldset).attr('id');
+                    const tableId = getTableId(fieldset);
+
+                    if (!tableId) return [];
+
+                    const table = $(fieldset).find(tableId);
+                    if (!table.length) return [];
+
+                    const rows = table.find('tbody tr:not(.total)');
+                    const elements = [];
+
+                    rows.each(function () {
+                        const row = $(this);
+
+                        const input = row.find('input[type="text"]');
+                        if (input.length && !input.prop('disabled')) {
+                            elements.push(input[0]);
+                        }
+
+                        const textarea = row.find('textarea');
+                        if (textarea.length && !textarea.prop('disabled')) {
+                            elements.push(textarea[0]);
+                        }
+                    });
+
+                    return elements;
+                }
+
+                function focusFirstTableElement(fieldset) {
+                    if (!isSupportedFieldset(fieldset)) return false;
+
+                    const elements = getTableFocusElements(fieldset);
+                    if (elements.length > 0) {
+                        elements[0].focus();
+                        return true;
+                    }
+                    return false;
+                }
+
+                function handleTableEnterKey(e) {
+                    if (e.key !== 'Enter') return;
+
+                    const target = e.target;
+                    const fieldset = $(target).closest('fieldset');
+
+                    if (!isSupportedFieldset(fieldset)) return;
+
+                    const tableId = getTableId(fieldset);
+                    if (!tableId) return;
+
+                    if (!$(target).closest(tableId).length) return;
+
+                    e.preventDefault();
+
+                    const allElements = getTableFocusElements(fieldset);
+                    const currentIndex = allElements.indexOf(target);
+
+                    if (currentIndex !== -1 && currentIndex < allElements.length - 1) {
+                        const nextElement = allElements[currentIndex + 1];
+                        if (nextElement && !nextElement.disabled) {
+                            nextElement.focus();
+                            return;
+                        }
+                    }
+
+                    if (currentIndex === allElements.length - 1) {
+
+                        const fieldsetElements = $(fieldset).find('input:not([type="hidden"]), select, button, textarea').toArray();
+                        const currentIndexInFieldset = fieldsetElements.indexOf(target);
+
+                        if (currentIndexInFieldset > -1 && currentIndexInFieldset < fieldsetElements.length - 1) {
+                            let nextElement = fieldsetElements[currentIndexInFieldset + 1];
+                            if (nextElement) {
+
+                                while (nextElement && (nextElement.disabled || $(nextElement).is(':hidden'))) {
+                                    const nextIndex = fieldsetElements.indexOf(nextElement) + 1;
+                                    nextElement = nextIndex < fieldsetElements.length ? fieldsetElements[nextIndex] : null;
+                                }
+
+                                if (nextElement) {
+                                    if (nextElement.tagName === "BUTTON" || nextElement.type === "button") {
+                                        nextElement.click();
+                                    } else {
+                                        nextElement.focus();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                $(document).on('click', '.next, .previous', function () {
+                    const button = $(this);
+                    const currentFieldset = button.closest('fieldset');
+
+                    let targetFieldset;
+                    if (button.hasClass('next')) {
+                        targetFieldset = currentFieldset.next();
+                    } else {
+                        targetFieldset = currentFieldset.prev();
+                    }
+
+                    if (isSupportedFieldset(targetFieldset)) {
+
+                        setTimeout(function () {
+                            focusFirstTableElement(targetFieldset);
+                        }, 100);
+
+                        setTimeout(function () {
+                            focusFirstTableElement(targetFieldset);
+                        }, 300);
+                    }
+                });
+
+                $(document).on('showFieldset', function (e, fieldset) {
+                    if (isSupportedFieldset(fieldset)) {
+                        setTimeout(function () {
+                            focusFirstTableElement(fieldset);
+                        }, 100);
+                    }
+                });
+
+                $(document).on('keydown',
+                    '#Expenses-Data-Table textarea, #Expenses-Data-Table input[type="text"], ' +
+                    '#compensation-Data-Table textarea, #compensation-Data-Table input[type="text"]',
+                    handleTableEnterKey
+                );
+
+                const activeFieldset = $('fieldset:visible').first();
+                if (isSupportedFieldset(activeFieldset)) {
+                    setTimeout(function () {
+                        focusFirstTableElement(activeFieldset);
+                    }, 200);
+                }
+
+                window.TableFocus = {
+                    focusFirstTableElement: focusFirstTableElement,
+                    getTableFocusElements: getTableFocusElements,
+                    isSupportedFieldset: isSupportedFieldset
+                };
+
+            });
+        })();
+    </script>
+
 </body>
 
 </html>
