@@ -115,11 +115,11 @@
         </td>
         <td class="note-td">
           <span class="note-corner" data-item="${item.id}"></span>
-          <div class="options-col d-flex justify-content-between align-items-center">
+          <div class="options-col d-flex justify-content-end align-items-center">
             <div class="col-auto add-note-icon">
                 <span class="note-cell" data-item="${item.id}"><i class="fa-solid fa-plus"></i></span>
             </div>             
-            <div class="col d-flex justify-content-end align-items-center p-0" style="gap:8px;">
+            <div class="col-auto d-flex justify-content-end align-items-center p-0" style="gap:8px;">
              <label for="${item.id}">${item.label}</label>
              <input type="checkbox" name="Examination-items" value="${item.id}" id="${item.id}">
             </div>
