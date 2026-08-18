@@ -2719,13 +2719,13 @@ fieldset {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0px 4px;
+    padding: 4px 4px;
 }
 
 .note-cell {
     cursor: pointer;
     color: #6c757d;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .note-cell.has-note {
@@ -2759,7 +2759,7 @@ fieldset {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 10px 10px 0 0;
+    border-width: 15px 15px 0 0;
     border-color: #d31d1d transparent transparent transparent;
     filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, .3));
 }
