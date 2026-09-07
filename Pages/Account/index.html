@@ -17,6 +17,8 @@
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.min.css' />
 
     <link href="../../css/Pages_Style/style.css" rel="styleSheet">
+          <!-- <link href="../../css/Pages_Style/English_style.css" rel="styleSheet"> -->
+
    <style>
         body {
             min-height: 100dvh;
@@ -27,6 +29,7 @@
         }
         .container-fluid {
             height: auto;
+            min-height: auto;
         }
         #content-wrapper {
             flex: 1;
@@ -77,7 +80,7 @@
         }
         @media(min-width:1399.98px) {
             .main-card {
-                max-height: 95%;
+                max-height: 98.5%;
             }
         }
     </style>
@@ -112,21 +115,21 @@
                             style="font-size: 14px; width: 200px;" aria-labelledby="userDropdown">
 
                              <a class="dropdown-item notify-item" href="index.html">
-                                <img src="../../images/common/Static/AccountNavIcon.svg"/>
+                                <img src="../../images/common/Static/NavBar/AccountNavIcon.svg"/>
                                 <span>حسابى</span>
                             </a>
                             <a class="dropdown-item notify-item" data-bs-toggle="modal" data-bs-target="#PassWordModal">
-                                <img src="../../images/common/Static/PasswordNavIcon.svg" />
+                                <img src="../../images/common/Static/NavBar/PasswordNavIcon.svg" />
                                 <span>تغيير كلمة السر</span>
                             </a>
                             <a class="dropdown-item notify-item" href="https://ayatt12.github.io/login_v2/Systems.html">
-                                <img src="../../images/common/Static/SystemsNavIcon.svg" href="https://ayatt12.github.io/login_v2/Systems.html"/>
+                                <img src="../../images/common/Static/NavBar/SystemsNavIcon.svg" href="https://ayatt12.github.io/login_v2/Systems.html"/>
                                 <span>الانظمة</span>
                             </a>
                             <hr class="dropdown-divider">
                             <!-- item-->
                             <a class="dropdown-item notify-item" href="https://ayatt12.github.io/login_v2/index.html">
-                                <img src="../../images/common/Static/LogoutNavIcon.svg" />
+                                <img src="../../images/common/Static/NavBar/LogoutNavIcon.svg" />
                                 <span>تسجيل الخروج</span>
                             </a>
                         </div>
@@ -264,11 +267,11 @@
                             <div class="row justify-content-center h-100 content-row">
                                 <div class="col-md-12 h-100">
                                     <fieldset>
-                                        <form class="needs-validation d-flex flex-column justify-content-between" novalidate id="AccountForm">
+                                        <form class="needs-validation d-flex flex-column justify-content-between w-100" novalidate id="AccountForm">
                                             <div class="row justify-content-end" style="flex: 1; min-height: 0;">
                                                 <div class="col-lg-12 h-100 d-flex">
-                                                    <div class="container-fluid" style="min-height:0; border: 1px solid #39629c9c;border-radius: 7px; box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);flex: 1;overflow-y: auto;overflow-x: hidden;">
-                                                        <div class="row my-3 justify-content-around account-cards-row">
+                                                    <div class="container-fluid" style=" border: 1px solid #39629c9c;border-radius: 7px; box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);flex: 1;overflow-y: auto;overflow-x: hidden;">
+                                                        <div class="row my-1 justify-content-around account-cards-row w-100">
                                                             <div class="col-lg-3 profile-section">
                                                                 <div class="row gap-1 gap-lg-3">
                                                                     <div class="col-md-12 d-flex justify-content-center">
@@ -294,11 +297,11 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-8 Profile-Data-section">
-                                                                <div class="info-card mb-3">
+                                                                <div class="info-card">
                                                                 <div class="header-card text-center py-2"> بيانات</div>
                                                                 <div class="data-card">
                                                                         <div class="container-fluid">
-                                                                            <div class="row g-2 g-lg-0  gap-lg-3 py-3">
+                                                                            <div class="row g-1 gap-xl-3 py-3 flex-column flex-1 justify-content-between w-100">
                                                                                 <div class="col-md-6">
                                                                                     <div class="row g-2">
                                                                                         <div class="col-auto">
@@ -331,6 +334,12 @@
                                                                                                 <select class="input-group-text select-style counterCode" name="counterCode-phone">
                                                                                                     <option value="966"> 966</option>
                                                                                                 </select>
+
+                                                                                            </div>
+                                                                                            <div class="row requird-field-row-last">
+                                                                                                <div class="invalid-feedback d-flex">
+                                                                                                    <span asp-validation-for="UserInformation.CrMasUserInformationMobileNo" class="text-danger">الحقل مطلوب </span>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -343,6 +352,11 @@
                                                                                         </div>
                                                                                         <div class="col-md-6">
                                                                                             <input type="email" id="email" class="form-control inputs english-input" name="email">
+                                                                                             <div class="row requird-field-row-last">
+                                                                                                <div class="invalid-feedback d-flex">
+                                                                                                    <span asp-validation-for="UserInformation.CrMasUserInformationMobileNo" class="text-danger"> من فضلك ادخل البريد الالكتروني بشكل صحيح</span>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -552,6 +566,5 @@
         });
     </script>
 </body>
-
 
 </html>
