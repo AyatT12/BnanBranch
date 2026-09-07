@@ -2362,7 +2362,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     display: flex;
     flex-direction: column;
     min-height: 0;
-    max-height: 95%;
+    max-height: 98.5%;
 }
 
 .content-row {
@@ -2463,7 +2463,7 @@ fieldset {
 /* Tablet and below - adjust table heights */
 @media (max-width: 1399.98px) {
     .main-card {
-        height: 93%;
+        height: 98.5%;
     }
 
     .form-card {
