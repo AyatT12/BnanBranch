@@ -7,6 +7,137 @@ function HideFirstImg() {
   firstImg.style.display = "none";
 }
 
+function isHeicOrHeifFile(file) {
+  const fileName = (file && file.name ? file.name : "").toLowerCase();
+  const fileType = (file && file.type ? file.type : "").toLowerCase();
+
+  return (
+    fileType === "image/heic" ||
+    fileType === "image/heif" ||
+    fileName.endsWith(".heic") ||
+    fileName.endsWith(".heif")
+  );
+}
+
+function isDngFile(file) {
+  const fileName = (file && file.name ? file.name : "").toLowerCase();
+  const fileType = (file && file.type ? file.type : "").toLowerCase();
+
+  return fileType === "image/dng" || fileName.endsWith(".dng");
+}
+
+function tiffBytesToPngDataUrl(tiffBytes) {
+  if (typeof window.UTIF === "undefined") {
+    return null;
+  }
+
+  const ifds = window.UTIF.decode(
+    tiffBytes.buffer.slice(
+      tiffBytes.byteOffset,
+      tiffBytes.byteOffset + tiffBytes.byteLength
+    )
+  );
+
+  if (!ifds || ifds.length === 0) {
+    return null;
+  }
+
+  const image = window.UTIF.decodeImage(tiffBytes.buffer, ifds[0]);
+  const rgba = window.UTIF.toRGBA8(ifds[0]);
+  const { width, height } = ifds[0];
+
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+
+  const ctx = canvas.getContext("2d");
+  const imageData = new ImageData(
+    new Uint8ClampedArray(rgba),
+    width,
+    height
+  );
+
+  ctx.putImageData(imageData, 0, 0);
+  return canvas.toDataURL("image/png");
+}
+
+function loadImageToDataUrl(file, callback) {
+  if (isDngFile(file)) {
+    console.log("Processing DNG file:", file.name);
+
+    if (typeof window.dcraw === "function") {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        try {
+          const rawBuffer = new Uint8Array(e.target.result);
+          const decodedBuffer = window.dcraw(rawBuffer, {
+            exportAsTiff: true,
+          });
+
+          if (decodedBuffer instanceof Uint8Array && decodedBuffer.length > 0) {
+            const pngDataUrl = tiffBytesToPngDataUrl(decodedBuffer);
+            if (pngDataUrl) {
+              callback(pngDataUrl);
+              return;
+            }
+          }
+
+          console.error("dcraw failed to decode DNG:", decodedBuffer);
+        } catch (err) {
+          console.error("Error converting DNG image with dcraw:", err);
+        }
+
+        const fallbackReader = new FileReader();
+        fallbackReader.onload = function (event) {
+          callback(event.target.result);
+        };
+        fallbackReader.readAsDataURL(file);
+      };
+      reader.readAsArrayBuffer(file);
+      return;
+    }
+
+    const fallbackReader = new FileReader();
+    fallbackReader.onload = function (event) {
+      callback(event.target.result);
+    };
+    fallbackReader.readAsDataURL(file);
+    return;
+  }
+
+  if (!isHeicOrHeifFile(file)) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      callback(e.target.result);
+    };
+    reader.readAsDataURL(file);
+    return;
+  }
+
+  console.log("Processing HEIC/HEIF file:", file.name);
+
+  heic2any({
+    blob: file,
+    toType: "image/png",
+  })
+    .then(function (convertedBlob) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        callback(e.target.result);
+      };
+      reader.readAsDataURL(convertedBlob);
+    })
+    .catch(function (err) {
+      console.error("Error converting HEIC/HEIF image:", err);
+
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        callback(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    });
+}
+
 var imgArray = [];
 
 function ImgUpload() {
@@ -20,7 +151,7 @@ function ImgUpload() {
       var filesArr = Array.prototype.slice.call(files);
       var uploadBtnBox = document.getElementById("checking-img");
       var uploadBtnBox1 = document.getElementById("upload__btn-box");
-      var errorMessageDivs = document.getElementsByClassName("Examination-error-message"); 
+      var errorMessageDivs = document.getElementsByClassName("Examination-error-message");
 
       if (imgArray.length + filesArr.length > maxLength) {
         uploadBtnBox.disabled = true;
@@ -77,7 +208,7 @@ function ImgUpload() {
                     url: e.target.result,
                   });
                   console.log(imgArray);
-                  
+
                   processedCount++;
                   if (processedCount === totalToProcess) {
                     setTimeout(setImageRowHeight, 100);
@@ -109,7 +240,7 @@ function ImgUpload() {
                 url: e.target.result,
               });
               // console.log(imgArray);
-              
+
               processedCount++;
               if (processedCount === totalToProcess) {
                 setTimeout(setImageRowHeight, 100);
@@ -158,96 +289,96 @@ function ImgUpload() {
       }
       uploadBtnBox1.style.display = "block";
     }
-    
+
     setTimeout(setImageRowHeight, 50);
   });
 }
 
 function setImageRowHeight() {
 
-     if (window.innerWidth <= 991) {
-        const imagesRow = document.querySelector('.virtual-check-images-row');
-        if (imagesRow) {
-            imagesRow.style.height = '';
-        }
-        return;
-    }
-    const virtualCheckData = document.querySelector('.virtual-check-data');
+  if (window.innerWidth <= 991) {
     const imagesRow = document.querySelector('.virtual-check-images-row');
-    
-    if (!virtualCheckData || !imagesRow) return;
-    
-    let attempts = 0;
-    const maxAttempts = 5;
-    
-    function measureHeight() {
-        const parentHeight = virtualCheckData.offsetHeight;
-        const currentReadingRows = document.querySelectorAll('.CurrentReadingg_row');
-        const errorMessage = document.querySelector('.virtual-check-data > .row.mt-auto');
-        
-        let otherElementsHeight = 0;
-        
-        currentReadingRows.forEach(row => {
-            otherElementsHeight += row.offsetHeight;
-        });
-        
-         if (errorMessage) {
-            otherElementsHeight += errorMessage.offsetHeight;
-        }
-        const buffer = 30;
-        const availableHeight = parentHeight - otherElementsHeight - buffer - 50;
-        if (availableHeight > 50 || attempts >= maxAttempts) {
-            imagesRow.style.height = `${Math.max(availableHeight, 150)}px`;
-            return true;
-        }
-        return false;
+    if (imagesRow) {
+      imagesRow.style.height = '';
     }
-    
-    function tryMeasure() {
-        attempts++;
-        const success = measureHeight();
-        
-        if (!success && attempts < maxAttempts) {
-            setTimeout(tryMeasure, 100);
-        }
-    }
-    
-    tryMeasure();
-}
-function initHeightObserver() {
-    const virtualCheckData = document.querySelector('.virtual-check-data');
-    if (!virtualCheckData) return;
+    return;
+  }
+  const virtualCheckData = document.querySelector('.virtual-check-data');
+  const imagesRow = document.querySelector('.virtual-check-images-row');
 
-    let settled = false;
+  if (!virtualCheckData || !imagesRow) return;
 
-    const observer = new ResizeObserver((entries) => {
-        for (const entry of entries) {
-            if (entry.contentRect.height > 0) {
-                setImageRowHeight();
-                if (!settled) {
-                    settled = true;
-                    setTimeout(() => observer.disconnect(), 1000);
-                }
-            }
-        }
+  let attempts = 0;
+  const maxAttempts = 5;
+
+  function measureHeight() {
+    const parentHeight = virtualCheckData.offsetHeight;
+    const currentReadingRows = document.querySelectorAll('.CurrentReadingg_row');
+    const errorMessage = document.querySelector('.virtual-check-data > .row.mt-auto');
+
+    let otherElementsHeight = 0;
+
+    currentReadingRows.forEach(row => {
+      otherElementsHeight += row.offsetHeight;
     });
 
-    observer.observe(virtualCheckData);
+    if (errorMessage) {
+      otherElementsHeight += errorMessage.offsetHeight;
+    }
+    const buffer = 30;
+    const availableHeight = parentHeight - otherElementsHeight - buffer - 50;
+    if (availableHeight > 50 || attempts >= maxAttempts) {
+      imagesRow.style.height = `${Math.max(availableHeight, 150)}px`;
+      return true;
+    }
+    return false;
+  }
+
+  function tryMeasure() {
+    attempts++;
+    const success = measureHeight();
+
+    if (!success && attempts < maxAttempts) {
+      setTimeout(tryMeasure, 100);
+    }
+  }
+
+  tryMeasure();
+}
+function initHeightObserver() {
+  const virtualCheckData = document.querySelector('.virtual-check-data');
+  if (!virtualCheckData) return;
+
+  let settled = false;
+
+  const observer = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.contentRect.height > 0) {
+        setImageRowHeight();
+        if (!settled) {
+          settled = true;
+          setTimeout(() => observer.disconnect(), 1000);
+        }
+      }
+    }
+  });
+
+  observer.observe(virtualCheckData);
 }
 
 document.addEventListener('DOMContentLoaded', initHeightObserver);
 
 
-window.addEventListener('resize', function() {
-    setTimeout(setImageRowHeight, 50);
-    setTimeout(setImageRowHeight, 100);
-    setTimeout(setImageRowHeight, 200);
+window.addEventListener('resize', function () {
+  setTimeout(setImageRowHeight, 50);
+  setTimeout(setImageRowHeight, 100);
+  setTimeout(setImageRowHeight, 200);
 });
 
 $("body").on("click", ".img-bg", function (e) {
   var imageUrl = $(this).css("background-image");
   imageUrl = imageUrl.replace(/^url\(['"](.+)['"]\)/, "$1");
- openImageInNewTab(imageUrl)
+  openImageInNewTab(imageUrl)
 });
 
 // // // //////////////////////////////////////////////// رفع صورة التوقيع ////////////////////////////////////////////////////////////////////////
@@ -276,14 +407,11 @@ UploadSigntaurePic.addEventListener("click", function () {
 imageUpload.addEventListener("change", function () {
   const file = imageUpload.files[0];
   if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const imageURL = e.target.result;
-       mainContainer.innerHTML =
+    loadImageToDataUrl(file, function (imageURL) {
+      mainContainer.innerHTML =
         '<i class="fa-regular fa-circle-xmark"  style="cursor: pointer;"></i>';
-       Previewing_Signature(imageURL)
-    };
-    reader.readAsDataURL(file);
+      Previewing_Signature(imageURL);
+    });
   }
 });
 
@@ -314,7 +442,7 @@ WriteSignature.addEventListener("click", function () {
   var prevY = 0;
   var currX = 0;
   var currY = 0;
-  
+
   function drawLine(x0, y0, x1, y1) {
     ctx.beginPath();
     ctx.moveTo(x0, y0);
@@ -403,19 +531,19 @@ function SaveUplodedSignature() {
   $("#signature-modal").modal("hide");
 }
 // // // //////////////////////////////////////////////// عرض صورة التوقيع ////////////////////////////////////////////////////////////////////////
-function Previewing_Signature(imageURL){
-   const previewImage = document.createElement("img");
-      previewImage.classList.add("preview-image");
-      previewImage.classList.add("bg-white");
-      previewImage.src = imageURL;
-      previewImage.id = "signatureImage";
-      imgeURL = imageURL;
-      uploadContainer.innerHTML = "";
-      uploadContainer.appendChild(previewImage);
-      uploadContainer.classList.add("previewing");
-      previewImage.addEventListener("click", function () {
-        var newTab = window.open();
-          $(newTab.document.head).html(`
+function Previewing_Signature(imageURL) {
+  const previewImage = document.createElement("img");
+  previewImage.classList.add("preview-image");
+  previewImage.classList.add("bg-white");
+  previewImage.src = imageURL;
+  previewImage.id = "signatureImage";
+  imgeURL = imageURL;
+  uploadContainer.innerHTML = "";
+  uploadContainer.appendChild(previewImage);
+  uploadContainer.classList.add("previewing");
+  previewImage.addEventListener("click", function () {
+    var newTab = window.open();
+    $(newTab.document.head).html(`
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
         <title>View Image</title>
@@ -482,7 +610,7 @@ function Previewing_Signature(imageURL){
         });
     `;
     newTab.document.body.appendChild(script);
-      });
+  });
 }
 
 document.getElementById("save").addEventListener("click", function () {
@@ -496,7 +624,7 @@ document.getElementById("save").addEventListener("click", function () {
 });
 // // //////////////////////////////////////////////// رفع صورة الهوية ////////////////////////////////////////////////////////////////////////
 let saveIDBtn = null;
-let hasValidImage = false; 
+let hasValidImage = false;
 
 document.getElementById("UploadIDPic").addEventListener("click", function () {
   saveIDBtn = "UploadIDPic";
@@ -519,16 +647,13 @@ UploadIDPic.addEventListener("click", function () {
 IDimageUpload.addEventListener("change", function () {
   const file = IDimageUpload.files[0];
   if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      const IDimageURL = e.target.result;
+    loadImageToDataUrl(file, function (IDimageURL) {
       const IDpreviewImage = document.createElement("img");
       IDpreviewImage.classList.add("preview-image");
       IDpreviewImage.src = IDimageURL;
       IDpreviewImage.id = "IDImage";
 
       IDpreviewImage.style.cursor = "pointer";
-      IDpreviewImage.title = "Inappropriate file type";
       IDpreviewImage.addEventListener("click", function () {
         openImageInNewTab(IDimageURL);
       });
@@ -540,9 +665,8 @@ IDimageUpload.addEventListener("change", function () {
       IDuploadContainer.appendChild(IDpreviewImage);
       IDuploadContainer.classList.add("previewing");
 
-      hasValidImage = true; 
-    };
-    reader.readAsDataURL(file);
+      hasValidImage = true;
+    });
   }
 });
 
@@ -555,7 +679,7 @@ removeIDImg.addEventListener("click", function (event) {
     IDuploadContainer.innerHTML =
       ' <img class="upload-icon" src="../../images/common/static/UploadPicture/add_image.png" alt="Upload Icon"><p>ارفق صورة الهوية </p>';
 
-    hasValidImage = false; 
+    hasValidImage = false;
     resetButtonImage();
   }
 });
@@ -624,7 +748,6 @@ openCameraButton.addEventListener("click", async () => {
 
     // عند الضغط يتم فتح الصورة في تاب مستقلة
     photo.style.cursor = "pointer";
-    photo.title = "Inappropriate file type";
     photo.addEventListener("click", function () {
       openImageInNewTab(dataUrl);
     });
@@ -636,9 +759,9 @@ openCameraButton.addEventListener("click", async () => {
 
 //الفانكشن المسؤلة عن فتح الصورة للهوية و رخصة القيادة و صور الفحص الظاهري
 function openImageInNewTab(imageDataUrl) {
- var newTab = window.open();
+  var newTab = window.open();
 
-     $(newTab.document.head).html(`
+  $(newTab.document.head).html(`
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
         <title>View Image</title>
@@ -679,14 +802,14 @@ function openImageInNewTab(imageDataUrl) {
         </style>
     `);
 
-    newTab.document.body.innerHTML = `
+  newTab.document.body.innerHTML = `
         <div class="image-container">
             <img src="${imageDataUrl}" alt="View Image">
         </div>
     `;
 
-    var script = newTab.document.createElement("script");
-    script.textContent = `
+  var script = newTab.document.createElement("script");
+  script.textContent = `
         function forceReflow() {
             document.body.style.display = 'none';
             document.body.offsetHeight; 
@@ -704,7 +827,7 @@ function openImageInNewTab(imageDataUrl) {
             setTimeout(forceReflow, 100);
         });
     `;
-    newTab.document.body.appendChild(script);
+  newTab.document.body.appendChild(script);
 }
 
 // Save the uploaded IDphoto image
