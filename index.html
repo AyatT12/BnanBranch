@@ -24,9 +24,43 @@
         rel="stylesheet">
     <!-- <link rel="stylesheet" href='css/Index_Style/english.css' /> -->
 
+<style>
+        .video-help-btn {
+            position: fixed;
+            top: 110px;
+            left: 16px;
+            z-index: 1030;
+            width: 48px;
+            height: 48px;
+            border: 0;
+            border-radius: 50%;
+            background: #39629C;
+            color: #fff;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+            cursor: pointer;
+            transition: transform .2s, background .2s;
+        }
+        .video-help-btn img{
+             width: 25px;
+        }
+        .video-help-btn:hover { transform: scale(1.1); background: #223b5e; }
+        .video-help-btn:focus-visible { outline: 3px solid #333; outline-offset: 2px; }
+        #videoModal .modal-content { background: #000; border: 0; overflow: hidden; }
+        #videoModal .modal-header { background: #fff; }
+        #videoModal video { width: 100%; max-height: 75vh; display: block; background: #000; }
+    </style>
 </head>
 
 <body class="d-flex flex-column">
+    <!-- Video guide button -->
+    <button type="button" class="video-help-btn" id="openVideoBtn" data-bs-toggle="modal"
+        data-bs-target="#videoModal" title="شرح الشاشة بالفيديو" aria-label="شرح الشاشة بالفيديو">
+        <img src="https://system.ghyum.sa/CasSys/images/Video_icon.svg">
+    </button>
     <header class="header">
         <div class="navbar-area">
             <!-- Topbar -->
@@ -2476,6 +2510,35 @@
             </div>
         </div>
     </div>
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close m-0 p-1" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+                    <h1 class="modal-title fs-5" id="videoModalLabel">شرح الشاشة الرئيسية</h1>
+                </div>
+                <div class="modal-body p-0">
+                    <video id="guideVideo" controls playsinline preload="none"
+                        data-src="images/الفروع_الرئيسية_عربي.mp4"></video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var modalEl = document.getElementById('videoModal');
+            var video = document.getElementById('guideVideo');
+            modalEl.addEventListener('shown.bs.modal', function () {
+                if (!video.getAttribute('src')) video.setAttribute('src', video.dataset.src);
+                video.play().catch(function () { });
+            });
+            modalEl.addEventListener('hidden.bs.modal', function () {
+                video.pause();
+                video.currentTime = 0;
+            });
+        })();
+    </script>
     <!-- ========================= JS here ========================= -->
     <!-- charts -->
      
